@@ -94,7 +94,7 @@ export default function ChannelsPage() {
           </h1>
 
           <p className="text-gray-600 mb-8">
-            From WhatsApp to Instagram DMs — BigBrosAI unifies every channel
+            From WhatsApp to Instagram DMs — bigbrosai unifies every channel
             in one dashboard.
           </p>
 

@@ -3,10 +3,10 @@ import { LegalLayout, LH2, LH3, LP, LUL, LCallout } from "@/components/legal/Leg
 export const metadata: Metadata = { title: "Privacy Policy" };
 export default function PrivacyPage() {
   return (
-    <LegalLayout title="Privacy Policy" subtitle="How BigBrosAI collects, uses, and protects your data"
+    <LegalLayout title="Privacy Policy" subtitle="How bigbrosai collects, uses, and protects your data"
       lastUpdated="January 1, 2025" activePath="/legal/privacy">
       <LP>Bigbros Ai Private Limited ("Company", "we", "us") is committed to protecting your privacy. This Policy explains how we collect, use, disclose, and safeguard your information when you use our platform and services.</LP>
-      <LCallout type="info">By using BigBrosAI, you consent to the practices described in this policy.</LCallout>
+      <LCallout type="info">By using bigbrosai, you consent to the practices described in this policy.</LCallout>
       <LH2>1. Information We Collect</LH2>
       <LH3>1.1 Information You Provide</LH3>
       <LUL items={["Account details: name, email, phone, company name, billing address","Payment information processed via PCI-DSS compliant processors","Profile information and notification preferences","Support communications with our team","Business data: contact lists, templates, campaigns you create"]} />

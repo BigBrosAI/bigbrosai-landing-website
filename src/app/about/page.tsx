@@ -39,10 +39,10 @@ export default function AboutPage() {
       <Section bg="alt">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <SectionHeader eyebrow="Our Story" title="Why we built BigBrosAI" centered={false} />
+            <SectionHeader eyebrow="Our Story" title="Why we built bigbrosai" centered={false} />
             <div className="space-y-4 text-slate-500 text-sm leading-relaxed">
-              <p>BigBrosAI was born from frustration. We watched businesses struggle with fragmented tools — one for WhatsApp, another for email, yet another for SMS. Managing conversations across silos was expensive, complex, and inefficient.</p>
-              <p>We built BigBrosAI to fix that. A unified platform where businesses can manage every customer touchpoint — from the first WhatsApp message to ongoing omnichannel engagement — in one place.</p>
+              <p>bigbrosai was born from frustration. We watched businesses struggle with fragmented tools — one for WhatsApp, another for email, yet another for SMS. Managing conversations across silos was expensive, complex, and inefficient.</p>
+              <p>We built bigbrosai to fix that. A unified platform where businesses can manage every customer touchpoint — from the first WhatsApp message to ongoing omnichannel engagement — in one place.</p>
               <p>Today we power communication for 50,000+ businesses in 60+ countries, processing billions of messages monthly through official WhatsApp Business APIs.</p>
             </div>
           </div>

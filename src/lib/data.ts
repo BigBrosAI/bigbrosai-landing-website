@@ -75,7 +75,7 @@ export const CHANNELS: Channel[] = [
     status: "SOON",
     reach: "4B+ users",
     openRate: "22%",
-    desc: "Reach customers in their inbox with beautifully designed HTML emails. Transactional, promotional and drip campaigns — all managed from the same BigBrosAI dashboard.",
+    desc: "Reach customers in their inbox with beautifully designed HTML emails. Transactional, promotional and drip campaigns — all managed from the same bigbrosai dashboard.",
     features: [
       "Drag-and-drop email builder",
       "A/B split testing",
@@ -213,7 +213,7 @@ export const FEATURES_DATA = [
   {
     id: "api",
     title: "Official WhatsApp API",
-    desc: "BigBrosAI is built on official Meta-approved WhatsApp Business APIs. Your account is safe, compliant, and eligible for the coveted Green Tick verification.",
+    desc: "bigbrosai is built on official Meta-approved WhatsApp Business APIs. Your account is safe, compliant, and eligible for the coveted Green Tick verification.",
     color: "#0ea5e9",
     bullets: [
       "Official Meta BSP partner",
@@ -234,7 +234,7 @@ export const TESTIMONIALS: Testimonial[] = [
     company: "TechRetail India",
     avatar: "P",
     rating: 5,
-    text: "BigBrosAI helped us achieve 40% better engagement than email. Our WhatsApp campaigns now drive 35% of total monthly revenue. The ROI is undeniable.",
+    text: "bigbrosai helped us achieve 40% better engagement than email. Our WhatsApp campaigns now drive 35% of total monthly revenue. The ROI is undeniable.",
   },
   {
     name: "Rahul Mehta",
@@ -303,7 +303,7 @@ export const PRICING_PLANS: PricingPlan[] = [
     desc: "For scaling teams who need automation and advanced analytics.",
     color: "#22c55e",
     cta: "Get Started",
-    popular: true,
+    // popular: true,
     features: [
       "All Features of Free",
       "Marketing: ₹0.99",

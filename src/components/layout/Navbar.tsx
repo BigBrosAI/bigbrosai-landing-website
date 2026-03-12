@@ -5,7 +5,9 @@ import { useState, useEffect, useRef } from "react";
 import {
   Menu, X, ChevronDown, ArrowRight,
   MessageSquare, Mail, Smartphone, Camera, Gem,
-  Bot, BarChart2, Users, Zap, Shield, LayoutGrid,
+  Bot, BarChart2, Users, Zap, Shield,
+  ShoppingCart, GraduationCap, HeartPulse, Landmark, Building2,
+  Car, CalendarDays, Monitor, UtensilsCrossed, Plane, Dumbbell, Sparkles,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
@@ -25,6 +27,21 @@ const CHANNELS = [
   { label: "SMS", desc: "Global SMS delivery — Soon", href: "/channels#sms", Icon: Smartphone, live: false },
   { label: "RCS", desc: "Rich Android messaging — Soon", href: "/channels#rcs", Icon: Gem, live: false },
   { label: "Instagram", desc: "DM automation — Soon", href: "/channels#instagram", Icon: Camera, live: false },
+];
+
+const INDUSTRIES = [
+  { label: "E-commerce", href: "/industries/ecommerce", Icon: ShoppingCart, color: "#15803d" },
+  { label: "Education", href: "/industries/education", Icon: GraduationCap, color: "#7c3aed" },
+  { label: "Healthcare", href: "/industries/healthcare", Icon: HeartPulse, color: "#dc2626" },
+  { label: "Finance & BFSI", href: "/industries/finance", Icon: Landmark, color: "#0369a1" },
+  { label: "Real Estate", href: "/industries/real-estate", Icon: Building2, color: "#d97706" },
+  { label: "Automobile", href: "/industries/automobile", Icon: Car, color: "#64748b" },
+  { label: "Events", href: "/industries/events", Icon: CalendarDays, color: "#db2777" },
+  { label: "IT Services", href: "/industries/it-services", Icon: Monitor, color: "#0891b2" },
+  { label: "Food & Delivery", href: "/industries/food-delivery", Icon: UtensilsCrossed, color: "#ea580c" },
+  { label: "Travel", href: "/industries/travel", Icon: Plane, color: "#2563eb" },
+  { label: "Fitness", href: "/industries/fitness", Icon: Dumbbell, color: "#16a34a" },
+  { label: "Beauty & Retail", href: "/industries/beauty-retail", Icon: Sparkles, color: "#9333ea" },
 ];
 
 function DropMenu({ items, cols = 2 }: { items: typeof PRODUCT; cols?: 1 | 2 }) {
@@ -52,6 +69,45 @@ function DropMenu({ items, cols = 2 }: { items: typeof PRODUCT; cols?: 1 | 2 }) 
           </div>
         </Link>
       ))}
+    </div>
+  );
+}
+
+function IndustriesDropMenu() {
+  return (
+    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 bg-white rounded-2xl shadow-2xl border border-gray-100 p-4 z-50 w-[560px]">
+      {/* Header row */}
+      <div className="flex items-center justify-between mb-3 px-1">
+        <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">
+          All Industries
+        </span>
+        <Link
+          href="/industries"
+          className="text-[11px] font-semibold text-brand-700 hover:text-brand-800 flex items-center gap-1 transition-colors"
+        >
+          View all <ArrowRight size={11} />
+        </Link>
+      </div>
+      {/* 3-col grid */}
+      <div className="grid grid-cols-3 gap-1">
+        {INDUSTRIES.map((ind: any) => (
+          <Link
+            key={ind.label}
+            href={ind.href}
+            className="flex items-center gap-2.5 p-2.5 rounded-xl hover:bg-gray-50 transition-colors group"
+          >
+            <div
+              className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0"
+              style={{ background: ind.color + "15", color: ind.color }}
+            >
+              <ind.Icon size={14} />
+            </div>
+            <span className="text-sm font-medium text-gray-700 group-hover:text-gray-900 transition-colors leading-tight">
+              {ind.label}
+            </span>
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }
@@ -106,6 +162,9 @@ export function Navbar() {
             </NavDrop>
             <NavDrop label="Channels">
               <DropMenu items={CHANNELS as unknown as typeof PRODUCT} cols={1} />
+            </NavDrop>
+            <NavDrop label="Industries">
+              <IndustriesDropMenu />
             </NavDrop>
             {[
               { label: "Pricing", href: "/pricing" },

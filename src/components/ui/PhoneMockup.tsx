@@ -61,7 +61,7 @@ const TEMPLATES: MsgTemplate[] = [
     label: "OTP Verification",
     tag: "Authentication",
     headerType: "none",
-    body: "*482917* is your verification code for BigBrosAI.\n\nThis code expires in *10 minutes*. Do not share it with anyone.",
+    body: "*482917* is your verification code for bigbrosai.\n\nThis code expires in *10 minutes*. Do not share it with anyone.",
     footer: "bogbrosai.com",
     buttons: [{ type: "COPY_CODE", text: "Copy Code" }],
   },

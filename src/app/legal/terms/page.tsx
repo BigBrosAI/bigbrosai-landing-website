@@ -3,13 +3,13 @@ import { LegalLayout, LH2, LH3, LP, LUL, LCallout } from "@/components/legal/Leg
 export const metadata: Metadata = { title: "Terms of Service" };
 export default function TermsPage() {
   return (
-    <LegalLayout title="Terms of Service" subtitle="Rules and conditions governing your use of BigBrosAI"
+    <LegalLayout title="Terms of Service" subtitle="Rules and conditions governing your use of bigbrosai"
       lastUpdated="January 1, 2025" activePath="/legal/terms">
-      <LP>By accessing or using BigBrosAI, you agree to be bound by these Terms of Service. These Terms constitute a legally binding agreement between you and Bigbros Ai Private Limited ("Company").</LP>
+      <LP>By accessing or using bigbrosai, you agree to be bound by these Terms of Service. These Terms constitute a legally binding agreement between you and Bigbros Ai Private Limited ("Company").</LP>
       <LH2>1. Acceptance</LH2>
       <LP>By creating an account, you represent that you are at least 18, have authority to bind your organisation, and will comply with all applicable laws.</LP>
       <LH2>2. Services</LH2>
-      <LP>BigBrosAI provides a cloud-based communication platform enabling businesses to:</LP>
+      <LP>bigbrosai provides a cloud-based communication platform enabling businesses to:</LP>
       <LUL items={["Send and manage WhatsApp Business messages via official Meta APIs","Create and deploy automated chatbot flows","Manage contacts and run segmented campaigns","Analyse messaging performance in real time","Integrate with CRMs, payment gateways and other tools"]} />
       <LH2>3. Account Security</LH2>
       <LUL items={["Provide accurate registration information","Maintain confidentiality of your credentials","Notify us immediately of any unauthorised access","Be responsible for all activity under your account"]} />

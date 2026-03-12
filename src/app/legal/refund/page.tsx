@@ -5,7 +5,7 @@ export default function RefundPage() {
   return (
     <LegalLayout title="Refund Policy" subtitle="Our commitment to fair and transparent billing"
       lastUpdated="January 1, 2025" activePath="/legal/refund">
-      <LP>At BigBrosAI, we stand behind our platform. This policy outlines when and how refunds are processed.</LP>
+      <LP>At bigbrosai, we stand behind our platform. This policy outlines when and how refunds are processed.</LP>
       <LCallout type="info">We offer a hassle-free money-back guarantee on all plans. Contact support@bigbrosai.com within the guarantee period.</LCallout>
       <LH2>1. Money-Back Guarantee</LH2>
       <LUL items={["Monthly plans: 7-day money-back guarantee from purchase date","Annual plans: 14-day money-back guarantee from purchase date","No questions asked — contact support within the guarantee period"]} />

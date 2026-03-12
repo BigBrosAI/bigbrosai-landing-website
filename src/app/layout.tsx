@@ -6,8 +6,8 @@ import { FloatingWA } from "@/components/layout/FloatingWA";
 
 export const metadata: Metadata = {
   title: {
-    default:  "BigBrosAI — Unified Communication Platform",
-    template: "%s | BigBrosAI",
+    default:  "bigbrosai — Unified Communication Platform",
+    template: "%s | bigbrosai",
   },
   description:
     "Bigbros Ai Private Limited — The unified platform to Broadcast, Automate & Engage customers across WhatsApp, Email, SMS, RCS & Instagram via official APIs.",

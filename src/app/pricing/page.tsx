@@ -82,12 +82,6 @@ export default function PricingPage() {
                     : "border border-gray-200 shadow-sm"
                     }`}
                 >
-                  {plan.popular && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-700 text-white text-[11px] font-bold px-4 py-1.5 rounded-full whitespace-nowrap flex items-center gap-1.5">
-                      <Zap size={12} className="fill-white" /> Most Popular
-                    </div>
-                  )}
-
                   <div
                     className="font-display font-bold text-lg mb-1"
                     style={{ color: plan.color }}
@@ -187,7 +181,7 @@ export default function PricingPage() {
                 {
                   Icon: UserRound,
                   title: "Unlimited Free Service messages",
-                  body: "Each business using BigBrosAI receives Unlimited FREE service messages. Businesses can reply to user messages without incurring any charges; it's completely FREE.",
+                  body: "Each business using bigbrosai receives Unlimited FREE service messages. Businesses can reply to user messages without incurring any charges; it's completely FREE.",
                 },
                 {
                   Icon: Megaphone,
@@ -210,7 +204,7 @@ export default function PricingPage() {
                 {
                   Icon: Search,
                   title: "Service Messages",
-                  body: "Service messages includes all user-initiated messages related to customer support, Chatbot support & queries asked by users. Service conversations are FREE for all businesses using BigBrosAI.",
+                  body: "Service messages includes all user-initiated messages related to customer support, Chatbot support & queries asked by users. Service conversations are FREE for all businesses using bigbrosai.",
                   bold: ["related to customer support,", "Chatbot support & queries asked by", "users."],
                 },
               ].map(({ Icon, img, title, body }) => (

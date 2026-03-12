@@ -49,7 +49,7 @@ export function CTASection() {
         </h2>
 
         <p className="text-white/75 text-base md:text-lg mb-10 leading-relaxed max-w-2xl mx-auto">
-          Join 50,000+ businesses using BigBrosAI. Start with 1,000 free
+          Join 50,000+ businesses using bigbrosai. Start with 1,000 free
           messages — no credit card required.
         </p>
 

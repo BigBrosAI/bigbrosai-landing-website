@@ -227,7 +227,7 @@ export function WhatsAppSection() {
           >
             <Zap size={11} className="text-brand-400" />
             <span className="text-[10px] text-slate-600 font-medium">
-              Powered by BigBrosAI · Official Meta BSP
+              Powered by bigbrosai · Official Meta BSP
             </span>
           </div>
         </div>
