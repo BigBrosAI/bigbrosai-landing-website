@@ -10,9 +10,6 @@ export const metadata: Metadata = {
 };
 
 export default function IndustriesIndexPage() {
-  const clickDemo = () => {
-    window.open("https://calendly.com/founderbbai/30min", "_blank");
-  };
   return (
     <main>
       {/* Hero */}
@@ -28,11 +25,17 @@ export default function IndustriesIndexPage() {
           <p className="text-slate-500 text-lg mb-8 max-w-xl mx-auto">
             bigbrosai adapts to how your business communicates — with deep use cases, automations, and workflows for 12 industries.
           </p>
-          <Button variant="primary" size="lg" onClick={clickDemo}>
-            <CalendarDays size={17} />
-            Get a Free Demo
-            <ArrowRight size={15} />
-          </Button>
+          <Link
+            href="https://calendly.com/founderbbai/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button variant="primary" size="lg">
+              <CalendarDays size={17} />
+              Get a Free Demo
+              <ArrowRight size={15} />
+            </Button>
+          </Link>
         </div>
       </section>
 
