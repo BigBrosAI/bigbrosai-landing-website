@@ -9,10 +9,10 @@ import { PhoneMockup } from "@/components/ui/PhoneMockup";
 import { HERO_STATS } from "@/lib/data";
 
 const CHANNELS = [
-  { Icon: MessageSquare, label: "WhatsApp",  color: "#15803d", live: true  },
-  { Icon: Mail,          label: "Email",     color: "#0369a1", live: false },
-  { Icon: Smartphone,    label: "SMS",       color: "#d97706", live: false },
-  { Icon: Camera,        label: "Instagram", color: "#be185d", live: false },
+  { Icon: MessageSquare, label: "WhatsApp", color: "#15803d", live: true },
+  { Icon: Mail, label: "Email", color: "#0369a1", live: false },
+  { Icon: Smartphone, label: "SMS", color: "#d97706", live: false },
+  { Icon: Camera, label: "Instagram", color: "#be185d", live: false },
 ];
 
 const TRUST = ["No credit card required", "Setup in 10 minutes", "Official Meta BSP"];
@@ -46,7 +46,7 @@ export function HeroSection() {
               <span className="relative inline-block">
                 <span className="text-gradient">Every Channel</span>
                 <svg className="absolute -bottom-1.5 left-0 w-full" height="5" viewBox="0 0 200 5" preserveAspectRatio="none">
-                  <path d="M0 4 Q50 0 100 3 Q150 6 200 2" stroke="#15803d" strokeWidth="2.5" strokeLinecap="round" fill="none" opacity="0.5"/>
+                  <path d="M0 4 Q50 0 100 3 Q150 6 200 2" stroke="#15803d" strokeWidth="2.5" strokeLinecap="round" fill="none" opacity="0.5" />
                 </svg>
               </span>
             </h1>
@@ -70,9 +70,15 @@ export function HeroSection() {
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-3 mb-8">
-              <Button size="lg">
-                Start for Free <ArrowRight size={17} />
-              </Button>
+              <Link
+                href="https://staging-dashboard.bigbrosai.com/signup"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button size="lg">
+                  Start for Free <ArrowRight size={17} />
+                </Button>
+              </Link>
               <Button size="lg" variant="secondary">
                 <span className="w-8 h-8 rounded-full bg-brand-50 border border-brand-200 flex items-center justify-center shrink-0">
                   <Play size={13} className="text-brand-700 fill-brand-700 ml-0.5" />

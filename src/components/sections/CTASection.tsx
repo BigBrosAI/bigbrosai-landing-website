@@ -8,6 +8,10 @@ export function CTASection() {
     window.open("https://staging-dashboard.bigbrosai.com", "_blank");
   };
 
+  const clickDemo = () => {
+    window.open("https://calendly.com/founderbbai/30min", "_blank");
+  };
+
   return (
     <section className="py-24 px-6 bg-brand-700 relative overflow-hidden">
 
@@ -61,6 +65,7 @@ export function CTASection() {
           <Button
             size="lg"
             className="bg-transparent border-2 border-white/50 text-white hover:bg-white/10 font-semibold"
+            onClick={clickDemo}
           >
             <CalendarDays size={17} /> Book a Demo
           </Button>

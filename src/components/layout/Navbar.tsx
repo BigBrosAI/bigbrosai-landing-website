@@ -160,8 +160,12 @@ export function Navbar() {
               </Link>
             ))}
             <div className="pt-3 mt-2 border-t border-gray-100 flex flex-col gap-2">
-              <Button variant="secondary" fullWidth>Log in</Button>
-              <Button variant="primary" fullWidth>Start for Free</Button>
+              <Button variant="secondary" fullWidth
+                onClick={() => window.open("https://staging-dashboard.bigbrosai.com/signup", "_blank")}
+              >Log in</Button>
+              <Button variant="primary" fullWidth
+                onClick={() => window.open("https://staging-dashboard.bigbrosai.com/signup", "_blank")}
+              >Start for Free</Button>
             </div>
           </div>
         )}

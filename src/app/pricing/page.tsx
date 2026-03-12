@@ -18,10 +18,10 @@ import { CTASection } from "@/components/sections/CTASection";
 import { PRICING_PLANS } from "@/lib/data";
 
 const FAQ = [
-  { q: "Is there a free plan?", a: "Yes! Start with ₹50 signup bonus." },
+  { q: "Is there a free plan?", a: "Yes! Every new account gets a ₹50 signup bonus to get started." },
   { q: "Are WhatsApp conversation charges included?", a: "Platform fees are included. WhatsApp conversation charges are billed separately per Meta's rates." },
-  { q: "Can I change plans anytime?", a: "Yes — upgrade or downgrade at any time. Changes take effect on the next billing cycle." },
-  { q: "Do you offer a refund guarantee?", a: "Yes — after review" },
+  { q: "Can I change plans anytime?", a: "Yes — you can upgrade or downgrade your plan at any time. Upgrades take effect immediately, while downgrades are applied in the next billing cycle." },
+  { q: "Do you offer a refund guarantee?", a: "Refunds may be issued after a review of the request." },
 ];
 
 export default function PricingPage() {
@@ -193,7 +193,7 @@ export default function PricingPage() {
                   Icon: Megaphone,
                   title: "Marketing messages",
                   body: "Marketing messages include all promotional messages, offers, product updates. Each marketing message delivered costs ₹1.09/message (for Indian users)",
-                  bold: ["₹1.09/message", "(for Indian users)"],
+                  bold: ["₹0.99/message", "(for Indian users)"],
                 },
                 {
                   Icon: ShoppingCart,

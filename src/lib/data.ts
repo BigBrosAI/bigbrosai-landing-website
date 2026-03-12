@@ -299,7 +299,7 @@ export const PRICING_PLANS: PricingPlan[] = [
   },
   {
     name: "Basic",
-    price: { monthly: 499, annual: 450 },
+    price: { monthly: 799, annual: 720 },
     desc: "For scaling teams who need automation and advanced analytics.",
     color: "#22c55e",
     cta: "Get Started",
