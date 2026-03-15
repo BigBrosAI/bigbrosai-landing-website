@@ -117,7 +117,7 @@ export default function PricingPage() {
                     variant={plan.popular ? "primary" : "secondary"}
                     size="md"
                     className="mb-7"
-                    onClick={() => window.open("https://staging-dashboard.bigbrosai.com", "_blank")}
+                    onClick={() => window.open("https://dashboard.bigbrosai.com", "_blank")}
                   >
                     {plan.cta} <ArrowRight size={15} />
                   </Button>

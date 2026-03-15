@@ -71,7 +71,7 @@ export function HeroSection() {
             {/* CTAs */}
             <div className="flex flex-wrap gap-3 mb-8">
               <Link
-                href="https://staging-dashboard.bigbrosai.com/signup"
+                href="https://dashboard.bigbrosai.com/signup"
                 target="_blank"
                 rel="noopener noreferrer"
               >

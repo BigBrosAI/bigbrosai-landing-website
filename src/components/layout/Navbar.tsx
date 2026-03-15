@@ -5,7 +5,7 @@ import { useState, useEffect, useRef } from "react";
 import {
   Menu, X, ChevronDown, ArrowRight,
   MessageSquare, Mail, Smartphone, Camera, Gem,
-  Bot, BarChart2, Users, Zap, Shield,
+  Bot, BarChart2, Users, Zap, Shield, LayoutGrid,
   ShoppingCart, GraduationCap, HeartPulse, Landmark, Building2,
   Car, CalendarDays, Monitor, UtensilsCrossed, Plane, Dumbbell, Sparkles,
 } from "lucide-react";
@@ -13,6 +13,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
 
 const PRODUCT = [
+  { label: "All Products", desc: "View all our communication APIs", href: "/product", Icon: LayoutGrid, color: "#111827" },
   { label: "WhatsApp Marketing", desc: "Broadcast, automate & engage", href: "/features#whatsapp", Icon: MessageSquare, color: "#15803d" },
   { label: "AI Chatbot Builder", desc: "No-code conversation flows", href: "/features#chatbot", Icon: Bot, color: "#7c3aed" },
   { label: "Multi-Agent Inbox", desc: "Your whole team on one number", href: "/features#inbox", Icon: Users, color: "#d97706" },
@@ -181,7 +182,7 @@ export function Navbar() {
           {/* Desktop CTAs */}
           <div className="hidden md:flex items-center gap-3 ml-auto">
             <Button
-              onClick={() => window.open("https://staging-dashboard.bigbrosai.com/signin", "_blank")}
+              onClick={() => window.open("https://dashboard.bigbrosai.com/signin", "_blank")}
               variant="ghost"
               size="sm"
             >
@@ -189,7 +190,7 @@ export function Navbar() {
             </Button>
 
             <Button
-              onClick={() => window.open("https://staging-dashboard.bigbrosai.com/signup", "_blank")}
+              onClick={() => window.open("https://dashboard.bigbrosai.com/signup", "_blank")}
               variant="primary"
               size="sm"
             >
@@ -220,10 +221,10 @@ export function Navbar() {
             ))}
             <div className="pt-3 mt-2 border-t border-gray-100 flex flex-col gap-2">
               <Button variant="secondary" fullWidth
-                onClick={() => window.open("https://staging-dashboard.bigbrosai.com/signup", "_blank")}
+                onClick={() => window.open("https://dashboard.bigbrosai.com/signup", "_blank")}
               >Log in</Button>
               <Button variant="primary" fullWidth
-                onClick={() => window.open("https://staging-dashboard.bigbrosai.com/signup", "_blank")}
+                onClick={() => window.open("https://dashboard.bigbrosai.com/signup", "_blank")}
               >Start for Free</Button>
             </div>
           </div>

@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/Button";
 
 export function CTASection() {
   const clickStart = () => {
-    window.open("https://staging-dashboard.bigbrosai.com", "_blank");
+    window.open("https://dashboard.bigbrosai.com", "_blank");
   };
 
   const clickDemo = () => {
