@@ -64,7 +64,7 @@ export function IndustryPage({ industry }: { industry: Industry }) {
             {industry.metrics.map((m) => (
               <div
                 key={m.label}
-                className="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm"
+                className="bg-white border border-gray-200 rounded-2xl p-5 "
               >
                 <m.icon size={16} className="mb-2" style={{ color: industry.color }} />
                 <div
@@ -83,7 +83,7 @@ export function IndustryPage({ industry }: { industry: Industry }) {
               href="https://calendly.com/founderbbai/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-white font-semibold text-sm px-6 py-3 rounded-xl shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5"
+              className="flex items-center gap-2 bg-white font-semibold text-sm px-6 py-3 rounded-xl  hover:shadow-md transition-all hover:-translate-y-0.5"
               style={{ color: industry.color }}
             >
               <CalendarDays size={17} />
@@ -147,7 +147,7 @@ export function IndustryPage({ industry }: { industry: Industry }) {
             {industry.useCases.map((uc, idx) => (
               <div
                 key={uc.title}
-                className="bg-white border border-gray-200 rounded-3xl overflow-hidden shadow-sm"
+                className="bg-white border border-gray-200 rounded-3xl overflow-hidden "
               >
                 {/* Use case header */}
                 <div
@@ -242,7 +242,7 @@ export function IndustryPage({ industry }: { industry: Industry }) {
               href="https://calendly.com/founderbbai/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-white font-semibold text-sm px-6 py-3 rounded-xl shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5"
+              className="flex items-center gap-2 bg-white font-semibold text-sm px-6 py-3 rounded-xl  hover:shadow-md transition-all hover:-translate-y-0.5"
               style={{ color: industry.color }}
             >
               <CalendarDays size={17} />
@@ -273,7 +273,7 @@ export function IndustryPage({ industry }: { industry: Industry }) {
                   <Link
                     key={r.slug}
                     href={`/industries/${r.slug}`}
-                    className="group bg-white border border-gray-200 rounded-2xl p-6 flex items-center gap-4 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 shadow-sm"
+                    className="group bg-white border border-gray-200 rounded-2xl p-6 flex items-center gap-4 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 "
                   >
                     <div
                       className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"

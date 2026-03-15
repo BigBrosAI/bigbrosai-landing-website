@@ -209,7 +209,7 @@ export function PhoneMockup({ businessName = "bigbrosai" }: { businessName?: str
         {/* Phone outer shell */}
         <div
           className="relative w-[288px] h-[610px] border-[8px] border-gray-900 rounded-[3rem] bg-black overflow-hidden"
-          style={{ boxShadow: "0 40px 100px rgba(0,0,0,0.5), 0 0 0 1px #2a2a2a inset" }}
+
         >
           {/* Notch */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 h-5 w-28 bg-black rounded-b-2xl z-30" />
@@ -263,7 +263,7 @@ export function PhoneMockup({ businessName = "bigbrosai" }: { businessName?: str
               }}
             >
               <div className="flex justify-center">
-                <span className="bg-white/90 text-[9px] font-semibold text-[#667781] px-3 py-0.5 rounded-md uppercase tracking-wide shadow-sm">
+                <span className="bg-white/90 text-[9px] font-semibold text-[#667781] px-3 py-0.5 rounded-md uppercase tracking-wide ">
                   Today
                 </span>
               </div>
@@ -276,7 +276,7 @@ export function PhoneMockup({ businessName = "bigbrosai" }: { businessName?: str
                   transition: "opacity 0.26s ease, transform 0.26s cubic-bezier(0.34,1.56,0.64,1)",
                 }}
               >
-                <div className="bg-white rounded-xl rounded-tl-none shadow-sm max-w-[91%] overflow-hidden">
+                <div className="bg-white rounded-xl rounded-tl-none  max-w-[91%] overflow-hidden">
 
                   {hasMedia && (
                     <div className="px-1 pt-1">
@@ -362,7 +362,7 @@ export function PhoneMockup({ businessName = "bigbrosai" }: { businessName?: str
       <div className="flex items-center gap-4">
         <button
           onClick={() => advance(-1)}
-          className="w-8 h-8 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center text-gray-500 hover:text-gray-900 hover:border-gray-300 transition-all"
+          className="w-8 h-8 rounded-full bg-white border border-gray-200  flex items-center justify-center text-gray-500 hover:text-gray-900 hover:border-gray-300 transition-all"
         >
           <ChevronLeft size={16} />
         </button>
@@ -382,7 +382,7 @@ export function PhoneMockup({ businessName = "bigbrosai" }: { businessName?: str
         </div>
         <button
           onClick={() => advance(1)}
-          className="w-8 h-8 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center text-gray-500 hover:text-gray-900 hover:border-gray-300 transition-all"
+          className="w-8 h-8 rounded-full bg-white border border-gray-200  flex items-center justify-center text-gray-500 hover:text-gray-900 hover:border-gray-300 transition-all"
         >
           <ChevronRight size={16} />
         </button>

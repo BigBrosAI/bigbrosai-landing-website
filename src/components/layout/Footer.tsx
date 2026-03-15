@@ -1,13 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import {
-  Twitter,
-  Linkedin,
-  Youtube,
-  Instagram,
-  MessageCircle,
-} from "lucide-react";
-import { FOOTER_COLS } from "@/lib/data";
+import { FOOTER_COLS, SOCIAL_MEDIA } from "@/lib/data";
 
 export function Footer() {
   return (
@@ -31,17 +24,13 @@ export function Footer() {
             </p>
 
             <div className="flex gap-2">
-              {[
-                { Icon: MessageCircle, label: "WhatsApp" },
-                { Icon: Twitter, label: "Twitter" },
-                { Icon: Linkedin, label: "LinkedIn" },
-                { Icon: Youtube, label: "YouTube" },
-                { Icon: Instagram, label: "Instagram" },
-              ].map(({ Icon, label }) => (
+              {SOCIAL_MEDIA.map(({ Icon, label, href }) => (
                 <a
                   key={label}
-                  href="#"
+                  href={href}
                   aria-label={label}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-9 h-9 rounded-lg bg-gray-100 border border-gray-200 flex items-center justify-center text-slate-400 hover:bg-brand-50 hover:border-brand-200 hover:text-brand-700 transition-all duration-200"
                 >
                   <Icon size={15} />
@@ -62,6 +51,8 @@ export function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-sm text-slate-400 hover:text-brand-700 transition-colors"
                     >
                       {link.label}
@@ -79,23 +70,6 @@ export function Footer() {
             © {new Date().getFullYear()} Bigbros Ai Private Limited. All rights
             reserved.
           </p>
-
-          <div className="flex gap-5">
-            {[
-              { label: "Privacy", href: "/legal/privacy" },
-              { label: "Terms", href: "/legal/terms" },
-              { label: "Cookies", href: "/legal/cookies" },
-              { label: "GDPR", href: "/legal/gdpr" },
-            ].map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className="hover:text-brand-700 transition-colors"
-              >
-                {l.label}
-              </Link>
-            ))}
-          </div>
         </div>
       </div>
     </footer>

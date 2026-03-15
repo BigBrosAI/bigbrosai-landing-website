@@ -377,7 +377,7 @@ export function IndustriesSection() {
             <button
               key={ind.label}
               onClick={() => setActive(i)}
-              className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl border text-sm font-medium transition-all duration-200 cursor-pointer shadow-sm hover:shadow-md"
+              className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl border text-sm font-medium transition-all duration-200 cursor-pointer  hover:shadow-md"
               style={
                 isActive
                   ? {
@@ -498,7 +498,7 @@ export function IndustriesSection() {
               {cs.useCases.map((uc, i) => (
                 <div
                   key={i}
-                  className="flex items-start gap-3 bg-white border border-gray-100 rounded-xl p-4 shadow-sm"
+                  className="flex items-start gap-3 bg-white border border-gray-100 rounded-xl p-4 "
                 >
                   <div
                     className="w-6 h-6 rounded-lg flex items-center justify-center shrink-0 mt-0.5"
@@ -528,7 +528,7 @@ export function IndustriesSection() {
                 </p>
               </div>
               <button
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5 self-start shadow-sm"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5 self-start "
                 style={{ background: cs.accentColor }}
                 onClick={clickDemo}
               >
