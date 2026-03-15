@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import { Check, Megaphone, Bot, BarChart2, Users, Zap, Shield, ArrowRight } from "lucide-react";
-import { Section, SectionHeader } from "@/components/ui/Section";
-import { Button } from "@/components/ui/Button";
+import Image from "next/image";
+import { Check, Megaphone, Bot, BarChart2, Users, Zap, Shield } from "lucide-react";
 import { CTASection } from "@/components/sections/CTASection";
 import { FEATURES_DATA } from "@/lib/data";
 
@@ -53,9 +52,16 @@ export default function FeaturesPage() {
                 ))}
               </div>
             </div>
-            <div className={cn("rounded-3xl p-14 flex items-center justify-center min-h-[260px] border", idx % 2 !== 0 ? "lg:order-1" : "")}
-              style={{ background: feature.color + "07", borderColor: feature.color + "20" }}>
-              <div style={{ color: feature.color, opacity: 0.2 }} className="scale-[3]">{ICONS[feature.id]}</div>
+            <div className={`${idx % 2 !== 0 ? "lg:order-1 " : ""}w-full`}>
+              <Image
+                src={feature.image}
+                alt={feature.title}
+                width={520}
+                height={320}
+                className="w-full h-auto object-cover rounded-xl"
+                sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 520px"
+                priority={idx === 0}
+              />
             </div>
           </div>
         </section>
@@ -64,5 +70,3 @@ export default function FeaturesPage() {
     </>
   );
 }
-
-function cn(...c: (string | undefined | false)[]) { return c.filter(Boolean).join(" "); }

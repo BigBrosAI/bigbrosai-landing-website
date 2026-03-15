@@ -147,7 +147,7 @@ export function Navbar() {
     <>
       <header className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-200" : "bg-white border-b border-gray-100"
+        scrolled ? "bg-white/95 backdrop-blur-md  border-b border-gray-200" : "bg-white border-b border-gray-100"
       )}>
         <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center gap-4">
           {/* Logo */}

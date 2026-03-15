@@ -50,7 +50,7 @@ export default function PricingPage() {
                 key={String(a)}
                 onClick={() => setAnnual(a)}
                 className={`px-5 py-2 rounded-lg text-sm font-semibold transition-all flex items-center gap-2 ${annual === a
-                  ? "bg-white shadow-sm text-gray-900"
+                  ? "bg-white  text-gray-900"
                   : "text-gray-500"
                   }`}
               >
@@ -79,7 +79,7 @@ export default function PricingPage() {
                   key={plan.name}
                   className={`bg-white rounded-2xl p-8 relative transition-all ${plan.popular
                     ? "border-2 border-brand-700 shadow-brand-lg scale-[1.02]"
-                    : "border border-gray-200 shadow-sm"
+                    : "border border-gray-200 "
                     }`}
                 >
                   <div
@@ -234,7 +234,7 @@ export default function PricingPage() {
               {FAQ.map((f) => (
                 <div
                   key={f.q}
-                  className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm"
+                  className="bg-white border border-gray-200 rounded-2xl p-6 "
                 >
                   <div className="font-semibold text-sm text-gray-900 mb-2">
                     {f.q}

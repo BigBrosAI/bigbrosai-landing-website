@@ -49,7 +49,7 @@ export default function IndustriesIndexPage() {
                 <Link
                   key={industry.slug}
                   href={`/industries/${industry.slug}`}
-                  className="group bg-white border border-gray-200 rounded-3xl p-7 hover:shadow-lg hover:-translate-y-1 transition-all duration-200 shadow-sm"
+                  className="group bg-white border border-gray-200 rounded-3xl p-7  hover:-translate-y-1 transition-all duration-200 "
                 >
                   {/* Top accent */}
                   <div

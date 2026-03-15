@@ -6,17 +6,17 @@ import { CTASection } from "@/components/sections/CTASection";
 export const metadata: Metadata = { title: "About Us" };
 
 const VALUES = [
-  { Icon: Target,      title: "Customer Obsession", desc: "Every feature starts with a real customer problem. Your success is our success.", color: "#15803d" },
-  { Icon: Lock,        title: "Privacy First",       desc: "We never sell your data. Customer conversations are encrypted and fully private.", color: "#0369a1" },
-  { Icon: Zap,         title: "Move Fast",           desc: "We ship features weekly — not quarterly. New capabilities delivered at speed.", color: "#d97706" },
-  { Icon: ShieldCheck, title: "Official & Safe",     desc: "100% built on official Meta-approved APIs. Your account stays safe and compliant.", color: "#7c3aed" },
+  { Icon: Target, title: "Customer Obsession", desc: "Every feature starts with a real customer problem. Your success is our success.", color: "#15803d" },
+  { Icon: Lock, title: "Privacy First", desc: "We never sell your data. Customer conversations are encrypted and fully private.", color: "#0369a1" },
+  { Icon: Zap, title: "Move Fast", desc: "We ship features weekly — not quarterly. New capabilities delivered at speed.", color: "#d97706" },
+  { Icon: ShieldCheck, title: "Official & Safe", desc: "100% built on official Meta-approved APIs. Your account stays safe and compliant.", color: "#7c3aed" },
 ];
 
 const STATS = [
-  { value: "2021",  label: "Founded"     },
-  { value: "50K+",  label: "Businesses"  },
-  { value: "2B+",   label: "Messages/yr" },
-  { value: "60+",   label: "Countries"   },
+  { value: "2021", label: "Founded" },
+  { value: "50K+", label: "Businesses" },
+  { value: "2B+", label: "Messages/yr" },
+  { value: "60+", label: "Countries" },
 ];
 
 export default function AboutPage() {
@@ -48,7 +48,7 @@ export default function AboutPage() {
           </div>
           <div className="grid grid-cols-2 gap-4">
             {STATS.map((s) => (
-              <div key={s.label} className="bg-white border border-gray-200 rounded-2xl p-7 text-center shadow-sm">
+              <div key={s.label} className="bg-white border border-gray-200 rounded-2xl p-7 text-center ">
                 <div className="font-display font-black text-4xl text-brand-700 mb-2">{s.value}</div>
                 <div className="font-medium text-sm text-slate-500">{s.label}</div>
               </div>
@@ -61,7 +61,7 @@ export default function AboutPage() {
         <SectionHeader eyebrow="Our Values" title="What drives us every day" />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {VALUES.map((v) => (
-            <div key={v.title} className="bg-gray-50 border border-gray-200 rounded-2xl p-7 text-center hover:shadow-card-hover hover:-translate-y-0.5 transition-all">
+            <div key={v.title} className="bg-gray-50 border border-gray-200 rounded-2xl p-7 text-center   transition-all">
               <div className="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-5"
                 style={{ background: v.color + "15", color: v.color }}>
                 <v.Icon size={22} />
@@ -77,11 +77,11 @@ export default function AboutPage() {
         <SectionHeader eyebrow="Contact" title="We'd love to hear from you" />
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-2xl mx-auto">
           {[
-            { Icon: Mail,          label: "Email",    value: "support@bigbrosai.com" },
-            { Icon: MessageCircle, label: "WhatsApp", value: "+91 99999 99999"        },
-            { Icon: MapPin,        label: "Location", value: "India"                 },
+            { Icon: Mail, label: "Email", value: "support@bigbrosai.com" },
+            { Icon: MessageCircle, label: "WhatsApp", value: "+91 99999 99999" },
+            { Icon: MapPin, label: "Location", value: "India" },
           ].map((c) => (
-            <div key={c.label} className="bg-white border border-gray-200 rounded-2xl p-7 text-center hover:border-brand-300 transition-colors shadow-sm">
+            <div key={c.label} className="bg-white border border-gray-200 rounded-2xl p-7 text-center hover:border-brand-300 transition-colors ">
               <c.Icon size={24} className="text-brand-700 mx-auto mb-3" />
               <div className="font-semibold text-sm text-gray-900 mb-1">{c.label}</div>
               <div className="text-brand-700 text-sm font-medium">{c.value}</div>
