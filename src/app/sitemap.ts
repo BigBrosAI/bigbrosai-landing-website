@@ -18,20 +18,7 @@ async function getRoutes(): Promise<MetadataRoute.Sitemap> {
         if (entry.isDirectory() && !excludeDirs.includes(entry.name)) {
             routes.push(`/${entry.name}`);
         }
-    });
-
-    // to create dynamic routes.
-    async function getBlogs() {
-        const data = await fetch("https://jsonplaceholder.typicode.com/todos");
-        const todos = await data.json();
-        console.log(todos, "todos");
-        const todoRoutes: string[] = todos.map(
-            (todo: any) => `/todo/${todo.id}`
-        );
-        routes = [...routes, ...todoRoutes];
-    }
-
-    await getBlogs();
+    })
 
     return routes.map((route) => ({
         url: `${baseUrl}${route}`,
