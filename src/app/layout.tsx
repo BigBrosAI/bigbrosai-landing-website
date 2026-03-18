@@ -3,7 +3,7 @@ import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingWA } from "@/components/layout/FloatingWA";
-import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
+import GAListener from "@/components/analytics/GAListener";
 
 export const metadata: Metadata = {
   title: {
@@ -31,8 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <Navbar />
         <main>{children}</main>
-        <GoogleAnalytics gaId="G-ETDQMP0BYH" />
-        <GoogleTagManager gtmId="GTM-KGHPPDZW" />
+        <GAListener />
         <Footer />
         <FloatingWA />
       </body>
