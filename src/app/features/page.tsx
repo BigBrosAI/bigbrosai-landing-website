@@ -4,7 +4,12 @@ import { Check, Megaphone, Bot, BarChart2, Users, Zap, Shield } from "lucide-rea
 import { CTASection } from "@/components/sections/CTASection";
 import { FEATURES_DATA } from "@/lib/data";
 
-export const metadata: Metadata = { title: "Features" };
+export const metadata: Metadata = {
+  title: "Features — WhatsApp Marketing, Chatbot & Automation Tools",
+  description:
+    "Explore BigBros AI features: WhatsApp broadcasting, AI chatbot builder, multi-agent inbox, campaign analytics, automation flows and official Meta API.",
+  alternates: { canonical: "/features" },
+};
 
 const ICONS: Record<string, React.ReactNode> = {
   whatsapp:   <Megaphone size={24} />,

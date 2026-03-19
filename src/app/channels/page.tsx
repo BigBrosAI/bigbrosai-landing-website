@@ -12,7 +12,12 @@ import {
 import { CTASection } from "@/components/sections/CTASection";
 import { CHANNELS } from "@/lib/data";
 
-export const metadata: Metadata = { title: "Channels" };
+export const metadata: Metadata = {
+  title: "Channels — WhatsApp, Email, SMS, RCS & Instagram",
+  description:
+    "Reach customers on every channel — WhatsApp, Email, SMS, RCS and Instagram DM — all managed from one BigBros AI dashboard. Official Meta Business API, 98% open rates.",
+  alternates: { canonical: "/channels" },
+};
 
 const CHANNEL_ICONS: Record<string, React.ReactNode> = {
   "WhatsApp": <MessageSquare size={26} />,
@@ -84,8 +89,62 @@ const CHANNEL_STATS: Record<string, Array<{ icon: React.ReactNode; label: string
 };
 
 export default function ChannelsPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://www.bigbrosai.com" },
+          { "@type": "ListItem", position: 2, name: "Channels", item: "https://www.bigbrosai.com/channels" },
+        ],
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "Which messaging channels does BigBros AI support?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "BigBros AI supports WhatsApp (live), Email, SMS, RCS and Instagram DM — all managed from one unified dashboard.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Is BigBros AI an official WhatsApp Business API provider?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. BigBros AI is built on official Meta-approved WhatsApp Business APIs with 99.9% delivery uptime and Green Tick verification support.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "What is the open rate for WhatsApp marketing messages?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "WhatsApp messages achieve up to 98% open rates, compared to 22% for email and 85% for Instagram DM.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "When will Email, SMS, RCS and Instagram DM channels be available?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Email, SMS, RCS and Instagram DM are coming soon. You can contact us to get notified when they launch.",
+            },
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Hero */}
       <section className="relative overflow-hidden bg-white pt-14 pb-20 px-6">
         <div className="max-w-4xl mx-auto text-center relative">
@@ -176,7 +235,7 @@ export default function ChannelsPage() {
                 </div>
 
                 <a
-                  href={isLive ? "/pricing" : "#"}
+                  href={isLive ? "/pricing" : "/contact-us"}
                   className="inline-flex items-center gap-2 text-sm font-semibold"
                   style={{ color: ch.color }}
                 >
