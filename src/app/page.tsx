@@ -8,7 +8,9 @@ import { IndustriesSection }  from "@/components/sections/IndustriesSection";
 import { CTASection }         from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
-  title: "bigbrosai — Reach Customers on Every Channel",
+  title: "BigBros AI — WhatsApp Automation & AI Chatbot for Businesses",
+  description:
+    "Automate customer engagement using WhatsApp, AI chatbots, Email, SMS & Instagram. Generate leads, support customers, and scale your business with BigBros AI.",
 };
 
 export default function HomePage() {
