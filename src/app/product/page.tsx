@@ -30,12 +30,12 @@ export default function ProductsPage() {
             <div className="w-16 h-16 rounded-2xl bg-green-100 flex items-center justify-center mb-8 border border-green-200">
               <MessageSquare size={32} className="text-green-600" />
             </div>
-            
+
             <h2 className="font-display font-black text-3xl mb-4 text-gray-900 group-hover:text-green-700 transition-colors">WhatsApp Business API</h2>
             <p className="text-slate-500 text-base leading-relaxed mb-8 flex-1">
               Automate customer support, send promotional broadcasts, and build interactive AI-powered Chatbots directly on WhatsApp.
             </p>
-            
+
             <div className="flex items-center gap-2 text-green-700 font-bold text-sm tracking-wide group-hover:gap-3 transition-all">
               Explore WhatsApp API <ArrowRight size={16} />
             </div>
@@ -46,12 +46,12 @@ export default function ProductsPage() {
             <div className="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center mb-8 border border-blue-200">
               <Mail size={32} className="text-blue-600" />
             </div>
-            
+
             <h2 className="font-display font-black text-3xl mb-4 text-gray-900 group-hover:text-blue-700 transition-colors">Transactional Email API</h2>
             <p className="text-slate-500 text-base leading-relaxed mb-8 flex-1">
               Send verified OTPs, invoices, and password resets with 99.99% guaranteed uptime and sub-second delivery latency.
             </p>
-            
+
             <div className="flex items-center gap-2 text-blue-700 font-bold text-sm tracking-wide group-hover:gap-3 transition-all">
               Explore Email API <ArrowRight size={16} />
             </div>
@@ -60,7 +60,6 @@ export default function ProductsPage() {
       </section>
 
       <CTASection />
-      <Footer />
     </main>
   );
 }

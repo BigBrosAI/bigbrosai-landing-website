@@ -3,6 +3,7 @@ import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingWA } from "@/components/layout/FloatingWA";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.bigbrosai.com"),
@@ -53,6 +54,7 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.png",
     apple: "/favicon.png",
+    shortcut: "/favicon.png",
   },
 };
 
@@ -66,6 +68,7 @@ export default function RootLayout({
       <body>
         <Navbar />
         <main>{children}</main>
+        <GoogleAnalytics gaId="G-ETDQMP0BYH" />
         <Footer />
         <FloatingWA />
       </body>
