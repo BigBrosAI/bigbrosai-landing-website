@@ -451,9 +451,9 @@ export const FOOTER_COLS = [
   {
     title: "Support",
     links: [
-      { label: "Help Center", href: "#" },
+      { label: "Help Center", href: "/contact-us" },
       { label: "Status Page", href: "#" },
-      { label: "Contact Us", href: "#" },
+      { label: "Contact Us", href: "/contact-us" },
       { label: "Developer API", href: "#" },
     ],
   },

@@ -16,12 +16,25 @@ import {
 import { Button } from "@/components/ui/Button";
 import { CTASection } from "@/components/sections/CTASection";
 import { PRICING_PLANS } from "@/lib/data";
+import Link from "next/link";
 
 const FAQ = [
-  { q: "Is there a free plan?", a: "Yes! Every new account gets a ₹50 signup bonus to get started." },
-  { q: "Are WhatsApp conversation charges included?", a: "Platform fees are included. WhatsApp conversation charges are billed separately per Meta's rates." },
-  { q: "Can I change plans anytime?", a: "Yes — you can upgrade or downgrade your plan at any time. Upgrades take effect immediately, while downgrades are applied in the next billing cycle." },
-  { q: "Do you offer a refund guarantee?", a: "Refunds may be issued after a review of the request." },
+  {
+    q: "Is there a free plan?",
+    a: "Yes! Every new account gets a ₹50 signup bonus to get started.",
+  },
+  {
+    q: "Are WhatsApp conversation charges included?",
+    a: "Platform fees are included. WhatsApp conversation charges are billed separately per Meta's rates.",
+  },
+  {
+    q: "Can I change plans anytime?",
+    a: "Yes — you can upgrade or downgrade your plan at any time. Upgrades take effect immediately, while downgrades are applied in the next billing cycle.",
+  },
+  {
+    q: "Do you offer a refund guarantee?",
+    a: "Refunds may be issued after a review of the request.",
+  },
 ];
 
 export default function PricingPage() {
@@ -33,11 +46,13 @@ export default function PricingPage() {
       <section className="bg-gradient-to-br from-brand-50 via-white to-white py-20 px-6 text-center">
         <div className="max-w-2xl mx-auto">
           <div className="inline-flex items-center gap-2 bg-brand-50 border border-brand-200 text-brand-700 text-[11px] font-bold uppercase tracking-[0.12em] px-3.5 py-1.5 rounded-full mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-700" /> Transparent Pricing
+            <span className="w-1.5 h-1.5 rounded-full bg-brand-700" />{" "}
+            Transparent Pricing
           </div>
 
           <h1 className="font-display font-black text-4xl md:text-5xl text-gray-900 tracking-tight leading-[1.1] mb-4">
-            Simple Pricing, <span className="text-gradient">No Hidden Fees</span>
+            Simple Pricing,{" "}
+            <span className="text-gradient">No Hidden Fees</span>
           </h1>
 
           <p className="text-slate-500 text-lg mb-8">
@@ -49,10 +64,9 @@ export default function PricingPage() {
               <button
                 key={String(a)}
                 onClick={() => setAnnual(a)}
-                className={`px-5 py-2 rounded-lg text-sm font-semibold transition-all flex items-center gap-2 ${annual === a
-                  ? "bg-white  text-gray-900"
-                  : "text-gray-500"
-                  }`}
+                className={`px-5 py-2 rounded-lg text-sm font-semibold transition-all flex items-center gap-2 ${
+                  annual === a ? "bg-white  text-gray-900" : "text-gray-500"
+                }`}
               >
                 {a ? "Annual" : "Monthly"}
                 {a && (
@@ -69,7 +83,6 @@ export default function PricingPage() {
       {/* Pricing Cards */}
       <section className="bg-gray-50 py-16 px-6">
         <div className="max-w-6xl mx-auto">
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start mb-8">
             {PRICING_PLANS.map((plan) => {
               const price = annual ? plan.price.annual : plan.price.monthly;
@@ -77,10 +90,11 @@ export default function PricingPage() {
               return (
                 <div
                   key={plan.name}
-                  className={`bg-white rounded-2xl p-8 relative transition-all ${plan.popular
-                    ? "border-2 border-brand-700 shadow-brand-lg scale-[1.02]"
-                    : "border border-gray-200 "
-                    }`}
+                  className={`bg-white rounded-2xl p-8 relative transition-all ${
+                    plan.popular
+                      ? "border-2 border-brand-700 shadow-brand-lg scale-[1.02]"
+                      : "border border-gray-200 "
+                  }`}
                 >
                   <div
                     className="font-display font-bold text-lg mb-1"
@@ -117,7 +131,9 @@ export default function PricingPage() {
                     variant={plan.popular ? "primary" : "secondary"}
                     size="md"
                     className="mb-7"
-                    onClick={() => window.open("https://dashboard.bigbrosai.com", "_blank")}
+                    onClick={() =>
+                      window.open("https://dashboard.bigbrosai.com", "_blank")
+                    }
                   >
                     {plan.cta} <ArrowRight size={15} />
                   </Button>
@@ -157,10 +173,11 @@ export default function PricingPage() {
                 </p>
               </div>
             </div>
-
-            <Button size="lg" variant="primary" className="shrink-0">
-              Contact Sales <ArrowRight size={16} />
-            </Button>
+            <Link href="/contact-us">
+              <Button size="lg" variant="primary" className="shrink-0">
+                Contact Sales <ArrowRight size={16} />
+              </Button>
+            </Link>
           </div>
 
           <div className="mb-16">
@@ -168,7 +185,9 @@ export default function PricingPage() {
               <h2 className="font-display font-black text-3xl md:text-4xl text-gray-900 tracking-tight mb-3">
                 Important Pricing Terminologies
               </h2>
-              <p className="text-slate-500 text-base">Let's make WhatsApp API Pricing easy to understand for you!</p>
+              <p className="text-slate-500 text-base">
+                Let's make WhatsApp API Pricing easy to understand for you!
+              </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-10">
               {[
@@ -205,19 +224,32 @@ export default function PricingPage() {
                   Icon: Search,
                   title: "Service Messages",
                   body: "Service messages includes all user-initiated messages related to customer support, Chatbot support & queries asked by users. Service conversations are FREE for all businesses using bigbrosai.",
-                  bold: ["related to customer support,", "Chatbot support & queries asked by", "users."],
+                  bold: [
+                    "related to customer support,",
+                    "Chatbot support & queries asked by",
+                    "users.",
+                  ],
                 },
               ].map(({ Icon, img, title, body }) => (
                 <div key={title} className="flex flex-col gap-4">
                   <div className="w-11 h-11 rounded-xl bg-brand-50 border border-brand-100 flex items-center justify-center shrink-0">
-                    {img
-                      ? <img src={img} alt={title} className="w-5 h-5 object-contain" />
-                      : <Icon size={20} className="text-brand-700" />
-                    }
+                    {img ? (
+                      <img
+                        src={img}
+                        alt={title}
+                        className="w-5 h-5 object-contain"
+                      />
+                    ) : (
+                      <Icon size={20} className="text-brand-700" />
+                    )}
                   </div>
                   <div>
-                    <h3 className="font-display font-bold text-gray-900 text-lg mb-2">{title}</h3>
-                    <p className="text-slate-500 text-sm leading-relaxed">{body}</p>
+                    <h3 className="font-display font-bold text-gray-900 text-lg mb-2">
+                      {title}
+                    </h3>
+                    <p className="text-slate-500 text-sm leading-relaxed">
+                      {body}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -246,7 +278,6 @@ export default function PricingPage() {
               ))}
             </div>
           </div>
-
         </div>
       </section>
 
