@@ -58,6 +58,90 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.bigbrosai.com/#organization",
+      name: "BigBros AI",
+      url: "https://www.bigbrosai.com",
+      logo: "https://www.bigbrosai.com/logo.png",
+      sameAs: [
+        "https://x.com/bigbrosai",
+        "https://linkedin.com/company/bigbrosai/",
+        "https://instagram.com/bigbros.ai/",
+        "https://youtube.com/@bigbrosai",
+      ],
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "customer support",
+        email: "support@bigbrosai.com",
+        availableLanguage: "English",
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.bigbrosai.com/#website",
+      url: "https://www.bigbrosai.com",
+      name: "BigBros AI",
+      publisher: { "@id": "https://www.bigbrosai.com/#organization" },
+      potentialAction: {
+        "@type": "SearchAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: "https://www.bigbrosai.com/?q={search_term_string}",
+        },
+        "query-input": "required name=search_term_string",
+      },
+    },
+    {
+      "@type": "SoftwareApplication",
+      name: "BigBros AI",
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "Web",
+      url: "https://dashboard.bigbrosai.com",
+      offers: {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "INR",
+      },
+      publisher: { "@id": "https://www.bigbrosai.com/#organization" },
+    },
+    {
+      "@type": "ItemList",
+      name: "BigBros AI Key Pages",
+      itemListElement: [
+        { "@type": "SiteLinksSearchBox", target: "https://dashboard.bigbrosai.com/signin" },
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Log In",
+          url: "https://dashboard.bigbrosai.com/signin",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Sign Up",
+          url: "https://dashboard.bigbrosai.com/signup",
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Pricing",
+          url: "https://www.bigbrosai.com/pricing",
+        },
+        {
+          "@type": "ListItem",
+          position: 4,
+          name: "Contact Us",
+          url: "https://www.bigbrosai.com/contact-us",
+        },
+      ],
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -65,6 +149,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body>
         <Navbar />
         <main>{children}</main>

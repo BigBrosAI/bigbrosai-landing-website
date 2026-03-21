@@ -443,18 +443,18 @@ export const FOOTER_COLS = [
     title: "Company",
     links: [
       { label: "About Us", href: "/about" },
-      { label: "Blog", href: "#" },
-      { label: "Careers", href: "#" },
-      { label: "Partners", href: "#" },
+      { label: "Blog", href: "https://blog.bigbrosai.com" },
+      { label: "Careers", href: "mailto:careers@bigbrosai.com" },
+      { label: "Partners", href: "/contact-us" },
     ],
   },
   {
-    title: "Support",
+    title: "Account",
     links: [
-      { label: "Help Center", href: "/contact-us" },
-      { label: "Status Page", href: "#" },
+      { label: "Log In", href: "https://dashboard.bigbrosai.com/signin", external: true },
+      { label: "Sign Up Free", href: "https://dashboard.bigbrosai.com/signup", external: true },
       { label: "Contact Us", href: "/contact-us" },
-      { label: "Developer API", href: "#" },
+      { label: "Help Center", href: "mailto:support@bigbrosai.com" },
     ],
   },
   {

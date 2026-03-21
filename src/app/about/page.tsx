@@ -3,7 +3,12 @@ import { Target, Lock, Zap, ShieldCheck, Mail, MessageCircle, MapPin } from "luc
 import { Section, SectionHeader } from "@/components/ui/Section";
 import { CTASection } from "@/components/sections/CTASection";
 
-export const metadata: Metadata = { title: "About Us" };
+export const metadata: Metadata = {
+  title: "About Us — BigBros AI",
+  description:
+    "Learn about BigBros AI — the unified communication platform for WhatsApp, Email, SMS, RCS and Instagram. Trusted by 50,000+ businesses in 60+ countries.",
+  alternates: { canonical: "/about" },
+};
 
 const VALUES = [
   { Icon: Target, title: "Customer Obsession", desc: "Every feature starts with a real customer problem. Your success is our success.", color: "#15803d" },

@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
-import { HeroSectionEmail } from "@/components/sections/email/HeroSectionEmail";
-import { EmailStatsSection } from "@/components/sections/email/EmailStatsSection";
-import { FeaturesSectionEmail } from "@/components/sections/email/FeaturesSectionEmail";
-import { PricingSectionEmail } from "@/components/sections/email/PricingSectionEmail";
-import { MarqueeSection, StatsSection } from "@/components/sections/MarqueeSection";
-import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
-import { CTASection } from "@/components/sections/CTASection";
+import { HeroSectionEmail }     from "@/components/sections/email/HeroSectionEmail";
+import { EmailUseCasesSection } from "@/components/sections/email/EmailUseCasesSection";
+import { PricingSectionEmail }  from "@/components/sections/email/PricingSectionEmail";
+import { MarqueeSection }       from "@/components/sections/MarqueeSection";
+import { TestimonialsSection }  from "@/components/sections/TestimonialsSection";
+import { CTASection }           from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
   title: "bigbrosai — Email Marketing & Automation",
-  description: "Enterprise-grade email marketing and automation. High deliverability, AI writing assistant, and smart segmentation.",
+  description:
+    "Send beautiful campaigns, automate workflows, and deliver transactional emails at scale. High deliverability, drag-and-drop builder, and smart segmentation.",
+  alternates: { canonical: "/product/email" },
 };
 
 export default function EmailProductPage() {
@@ -17,9 +18,7 @@ export default function EmailProductPage() {
     <>
       <HeroSectionEmail />
       <MarqueeSection />
-      <StatsSection />
-      <FeaturesSectionEmail />
-      <EmailStatsSection />
+      <EmailUseCasesSection />
       <PricingSectionEmail />
       <TestimonialsSection />
       <CTASection />

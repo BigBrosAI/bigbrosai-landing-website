@@ -9,8 +9,8 @@ import { PhoneMockup } from "@/components/ui/PhoneMockup";
 import { HERO_STATS } from "@/lib/data";
 
 const CHANNELS = [
-  { Icon: MessageSquare, label: "WhatsApp", color: "#15803d", live: true },
-  { Icon: Mail, label: "Email", color: "#0369a1", live: false },
+  { Icon: MessageSquare, label: "WhatsApp", color: "#15803d", live: true, url: "/" },
+  { Icon: Mail, label: "Email", color: "#0369a1", live: true, url: "/product/email" },
   { Icon: Smartphone, label: "SMS", color: "#d97706", live: false },
   { Icon: Camera, label: "Instagram", color: "#be185d", live: false },
 ];
@@ -57,14 +57,16 @@ export function HeroSection() {
 
             {/* Channel pills */}
             <div className="flex flex-wrap gap-2 mb-9">
-              {CHANNELS.map(({ Icon, label, color, live }) => (
-                <div key={label}
-                  className="flex items-center gap-2 px-3.5 py-2 rounded-xl border text-sm font-medium"
-                  style={{ borderColor: color + "40", background: color + "08", color }}>
-                  <Icon size={15} />
-                  {label}
-                  <StatusBadge status={live ? "LIVE" : "SOON"} />
-                </div>
+              {CHANNELS.map(({ Icon, label, color, live, url }) => (
+                <Link href={url || "/"}>
+                  <div key={label}
+                    className="flex items-center gap-2 px-3.5 py-2 rounded-xl border text-sm font-medium"
+                    style={{ borderColor: color + "40", background: color + "08", color }}>
+                    <Icon size={15} />
+                    {label}
+                    <StatusBadge status={live ? "LIVE" : "SOON"} />
+                  </div>
+                </Link>
               ))}
             </div>
 
