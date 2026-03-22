@@ -436,7 +436,7 @@ export const FOOTER_COLS = [
       { label: "Features", href: "/features" },
       { label: "Channels", href: "/channels" },
       { label: "Pricing", href: "/pricing" },
-      { label: "API Docs", href: "/docs" },
+      { label: "API Docs", href: "https://docs.bigbrosai.com/", external: true },
     ],
   },
   {

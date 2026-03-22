@@ -168,14 +168,21 @@ export function Navbar() {
               <IndustriesDropMenu />
             </NavDrop>
             {[
-              { label: "Pricing", href: "/pricing" },
-              { label: "About", href: "/about" },
-              { label: "Docs", href: "/docs" },
+              { label: "Pricing", href: "/pricing", external: false },
+              { label: "About", href: "/about", external: false },
+              { label: "Docs", href: "https://docs.bigbrosai.com/", external: true },
             ].map(l => (
-              <Link key={l.href} href={l.href}
-                className="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors">
-                {l.label}
-              </Link>
+              l.external ? (
+                <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer"
+                  className="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors">
+                  {l.label}
+                </a>
+              ) : (
+                <Link key={l.href} href={l.href}
+                  className="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors">
+                  {l.label}
+                </Link>
+              )
             ))}
           </div>
 
@@ -208,16 +215,24 @@ export function Navbar() {
         {mobile && (
           <div className="md:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-1">
             {[
-              { label: "Features", href: "/features" },
-              { label: "Channels", href: "/channels" },
-              { label: "Pricing", href: "/pricing" },
-              { label: "About", href: "/about" },
-              { label: "Docs", href: "/docs" },
+              { label: "Features", href: "/features", external: false },
+              { label: "Channels", href: "/channels", external: false },
+              { label: "Pricing", href: "/pricing", external: false },
+              { label: "About", href: "/about", external: false },
+              { label: "Docs", href: "https://docs.bigbrosai.com/", external: true },
             ].map(l => (
-              <Link key={l.href} href={l.href} onClick={() => setMobile(false)}
-                className="px-3 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors">
-                {l.label}
-              </Link>
+              l.external ? (
+                <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer"
+                  onClick={() => setMobile(false)}
+                  className="px-3 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors">
+                  {l.label}
+                </a>
+              ) : (
+                <Link key={l.href} href={l.href} onClick={() => setMobile(false)}
+                  className="px-3 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors">
+                  {l.label}
+                </Link>
+              )
             ))}
             <div className="pt-3 mt-2 border-t border-gray-100 flex flex-col gap-2">
               <Button variant="secondary" fullWidth
