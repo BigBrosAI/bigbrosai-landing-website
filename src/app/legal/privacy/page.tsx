@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { LegalLayout, LH2, LH3, LP, LUL, LCallout } from "@/components/legal/LegalLayout";
-export const metadata: Metadata = { title: "Privacy Policy" };
+export const metadata: Metadata = { title: "Privacy Policy", alternates: { canonical: "https://www.bigbrosai.com/legal/privacy" } };
 export default function PrivacyPage() {
   return (
     <LegalLayout title="Privacy Policy" subtitle="How bigbrosai collects, uses, and protects your data"

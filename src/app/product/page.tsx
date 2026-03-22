@@ -7,6 +7,7 @@ import { MessageSquare, Mail, ArrowRight } from "lucide-react";
 export const metadata = {
   title: "Products | bigbrosai",
   description: "Explore bigbrosai's suite of communication APIs including WhatsApp and Transactional Email.",
+  alternates: { canonical: "https://www.bigbrosai.com/product" },
 };
 
 export default function ProductsPage() {

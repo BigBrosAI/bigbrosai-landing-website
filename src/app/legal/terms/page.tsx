@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { LegalLayout, LH2, LH3, LP, LUL, LCallout } from "@/components/legal/LegalLayout";
-export const metadata: Metadata = { title: "Terms of Service" };
+export const metadata: Metadata = { title: "Terms of Service", alternates: { canonical: "https://www.bigbrosai.com/legal/terms" } };
 export default function TermsPage() {
   return (
     <LegalLayout title="Terms of Service" subtitle="Rules and conditions governing your use of bigbrosai"

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "bigbrosai — Email Marketing & Automation",
   description:
     "Send beautiful campaigns, automate workflows, and deliver transactional emails at scale. High deliverability, drag-and-drop builder, and smart segmentation.",
-  alternates: { canonical: "/product/email" },
+  alternates: { canonical: "https://www.bigbrosai.com/product/email" },
 };
 
 export default function EmailProductPage() {

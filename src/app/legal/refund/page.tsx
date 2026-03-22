@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { LegalLayout, LH2, LP, LUL, LCallout } from "@/components/legal/LegalLayout";
-export const metadata: Metadata = { title: "Refund Policy" };
+export const metadata: Metadata = { title: "Refund Policy", alternates: { canonical: "https://www.bigbrosai.com/legal/refund" } };
 export default function RefundPage() {
   return (
     <LegalLayout title="Refund Policy" subtitle="Our commitment to fair and transparent billing"

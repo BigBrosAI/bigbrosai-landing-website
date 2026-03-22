@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { LegalLayout, LH2, LH3, LP, LUL, LCallout } from "@/components/legal/LegalLayout";
-export const metadata: Metadata = { title: "GDPR Compliance" };
+export const metadata: Metadata = { title: "GDPR Compliance", alternates: { canonical: "https://www.bigbrosai.com/legal/gdpr" } };
 export default function GdprPage() {
   return (
     <LegalLayout title="GDPR Compliance" subtitle="How bigbrosai complies with the General Data Protection Regulation"

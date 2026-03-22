@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/Button";
 export const metadata: Metadata = {
   title: "Industries | bigbrosai — WhatsApp Automation for Every Business",
   description: "Discover how bigbrosai helps businesses across 12+ industries automate customer communication, reduce churn, and grow revenue on WhatsApp.",
+  alternates: { canonical: "https://www.bigbrosai.com/industries" },
 };
 
 export default function IndustriesIndexPage() {

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "Channels — WhatsApp, Email, SMS, RCS & Instagram",
   description:
     "Reach customers on every channel — WhatsApp, Email, SMS, RCS and Instagram DM — all managed from one BigBros AI dashboard. Official Meta Business API, 98% open rates.",
-  alternates: { canonical: "/channels" },
+  alternates: { canonical: "https://www.bigbrosai.com/channels" },
 };
 
 const CHANNEL_ICONS: Record<string, React.ReactNode> = {

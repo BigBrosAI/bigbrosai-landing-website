@@ -8,6 +8,7 @@ const industry = INDUSTRY_MAP["it-services"];
 export const metadata: Metadata = {
   title: `${industry?.label} WhatsApp Automation | bigbrosai`,
   description: industry?.heroSubtitle,
+  alternates: { canonical: "https://www.bigbrosai.com/industries/it-services" },
 };
 
 export default function Page() {

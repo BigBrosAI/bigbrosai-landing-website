@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "About Us — BigBros AI",
   description:
     "Learn about BigBros AI — the unified communication platform for WhatsApp, Email, SMS, RCS and Instagram. Trusted by 50,000+ businesses in 60+ countries.",
-  alternates: { canonical: "/about" },
+  alternates: { canonical: "https://www.bigbrosai.com/about" },
 };
 
 const VALUES = [

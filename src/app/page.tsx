@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { HeroSection }         from "@/components/sections/HeroSection";
 import { MarqueeSection }      from "@/components/sections/MarqueeSection";
+import { ClientsSection }      from "@/components/sections/ClientsSection";
 import { UseCasesSection }     from "@/components/sections/UseCasesSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { IndustriesSection }   from "@/components/sections/IndustriesSection";
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
   title: "BigBros AI — WhatsApp Automation & AI Chatbot for Businesses",
   description:
     "Automate customer engagement using WhatsApp, AI chatbots, Email, SMS & Instagram. Generate leads, support customers, and scale your business with BigBros AI.",
+  alternates: { canonical: "https://www.bigbrosai.com" },
 };
 
 export default function HomePage() {
@@ -17,6 +19,7 @@ export default function HomePage() {
     <>
       <HeroSection />
       <MarqueeSection />
+      <ClientsSection />
       <UseCasesSection />
       <TestimonialsSection />
       <IndustriesSection />

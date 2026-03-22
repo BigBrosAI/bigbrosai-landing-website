@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "Automate your business with AI-powered WhatsApp, Email, SMS & chatbot solutions. Boost engagement, generate leads, and scale faster with BigBros AI.",
 
   alternates: {
-    canonical: "/",
+    canonical: "https://www.bigbrosai.com",
   },
 
   robots: {

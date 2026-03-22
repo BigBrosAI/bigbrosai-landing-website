@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { LegalLayout, LH2, LH3, LP, LUL } from "@/components/legal/LegalLayout";
-export const metadata: Metadata = { title: "Cookie Policy" };
+export const metadata: Metadata = { title: "Cookie Policy", alternates: { canonical: "https://www.bigbrosai.com/legal/cookies" } };
 export default function CookiesPage() {
   return (
     <LegalLayout title="Cookie Policy" subtitle="How we use cookies and similar tracking technologies"

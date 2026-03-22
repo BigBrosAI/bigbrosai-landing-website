@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Features — WhatsApp Marketing, Chatbot & Automation Tools",
   description:
     "Explore BigBros AI features: WhatsApp broadcasting, AI chatbot builder, multi-agent inbox, campaign analytics, automation flows and official Meta API.",
-  alternates: { canonical: "/features" },
+  alternates: { canonical: "https://www.bigbrosai.com/features" },
 };
 
 const ICONS: Record<string, React.ReactNode> = {
