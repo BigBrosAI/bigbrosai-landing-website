@@ -58,10 +58,11 @@ export function HeroSection() {
             {/* Channel pills */}
             <div className="flex flex-wrap gap-2 mb-9">
               {CHANNELS.map(({ Icon, label, color, live, url }) => (
-                <Link href={url || "/"}>
-                  <div key={label}
+                <Link key={label} href={url || "/"}>
+                  <div
                     className="flex items-center gap-2 px-3.5 py-2 rounded-xl border text-sm font-medium"
-                    style={{ borderColor: color + "40", background: color + "08", color }}>
+                    style={{ borderColor: color + "40", background: color + "08", color }}
+                  >
                     <Icon size={15} />
                     {label}
                     <StatusBadge status={live ? "LIVE" : "SOON"} />
@@ -69,7 +70,6 @@ export function HeroSection() {
                 </Link>
               ))}
             </div>
-
             {/* CTAs */}
             <div className="flex flex-wrap gap-3 mb-8">
               <Link
