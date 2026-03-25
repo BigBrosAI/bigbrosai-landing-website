@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { HeroSection }         from "@/components/sections/HeroSection";
 import { MarqueeSection }      from "@/components/sections/MarqueeSection";
 import { ClientsSection }      from "@/components/sections/ClientsSection";
+import { EmailFreeSection }    from "@/components/sections/EmailFreeSection";
 import { UseCasesSection }     from "@/components/sections/UseCasesSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { IndustriesSection }   from "@/components/sections/IndustriesSection";
@@ -20,6 +21,7 @@ export default function HomePage() {
       <HeroSection />
       <MarqueeSection />
       <ClientsSection />
+      <EmailFreeSection />
       <UseCasesSection />
       <TestimonialsSection />
       <IndustriesSection />

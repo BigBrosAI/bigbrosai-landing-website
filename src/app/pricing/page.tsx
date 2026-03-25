@@ -19,6 +19,7 @@ import { PRICING_PLANS } from "@/lib/data";
 
 const FAQ = [
   { q: "Is there a free plan?", a: "Yes! Every new account gets a ₹50 signup bonus to get started." },
+  { q: "Do emails cost extra?", a: "Every organisation gets 300 free transactional emails per day — no credit card, no expiry. Beyond that, emails are charged at ₹0.125/email." },
   { q: "Are WhatsApp conversation charges included?", a: "Platform fees are included. WhatsApp conversation charges are billed separately per Meta's rates." },
   { q: "Can I change plans anytime?", a: "Yes — you can upgrade or downgrade your plan at any time. Upgrades take effect immediately, while downgrades are applied in the next billing cycle." },
   { q: "Do you offer a refund guarantee?", a: "Refunds may be issued after a review of the request." },
@@ -62,6 +63,17 @@ export default function PricingPage() {
                 )}
               </button>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Email Free Tier Banner */}
+      <section className="bg-white border-b border-gray-100 py-4 px-6">
+        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-3 text-center sm:text-left">
+          <div className="flex items-center gap-2 bg-blue-50 border border-blue-200 rounded-full px-4 py-2">
+            <span className="text-blue-600 text-sm font-bold">📧 Email:</span>
+            <span className="text-blue-700 text-sm font-semibold">300 free emails / day on every plan</span>
+            <span className="text-blue-500 text-xs">· ₹0.125/email after</span>
           </div>
         </div>
       </section>
