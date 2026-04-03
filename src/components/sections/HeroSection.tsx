@@ -1,4 +1,6 @@
+"use client";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import {
   ArrowRight, MessageSquare, Mail, Smartphone,
   Camera, Play, CheckCircle2, TrendingUp,
@@ -18,6 +20,16 @@ const CHANNELS = [
 const TRUST = ["No credit card required", "Setup in 10 minutes", "Official Meta BSP"];
 
 export function HeroSection() {
+  const [startHref, setStartHref] = useState("https://dashboard.bigbrosai.com/signup");
+
+  useEffect(() => {
+    // If user already has a session cookie/token, send them to dashboard
+    const hasCookie = document.cookie.includes("accessToken");
+    const hasLocal = typeof localStorage !== "undefined" && localStorage.getItem("current-project");
+    if (hasCookie || hasLocal) {
+      setStartHref("https://dashboard.bigbrosai.com/pt");
+    }
+  }, []);
   return (
     <section className="relative overflow-hidden bg-white pt-10 pb-20 px-6">
       {/* Subtle grid background */}
@@ -38,7 +50,7 @@ export function HeroSection() {
             {/* Trust badge */}
             <div className="inline-flex items-center gap-2 bg-brand-50 border border-brand-200 rounded-full px-4 py-1.5 mb-8">
               <TrendingUp size={13} className="text-brand-700" />
-              <span className="text-xs font-semibold text-brand-700">#1 WhatsApp Marketing Platform in India</span>
+              <span className="text-xs font-semibold text-brand-700">Fastest Growing All-in-One Marketing Platform</span>
             </div>
 
             <h1 className="font-display font-black text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.08] tracking-tight text-gray-900 mb-5">
@@ -73,7 +85,7 @@ export function HeroSection() {
             {/* CTAs */}
             <div className="flex flex-wrap gap-3 mb-8">
               <Link
-                href="https://dashboard.bigbrosai.com/signup"
+                href={startHref}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -81,12 +93,18 @@ export function HeroSection() {
                   Start for Free <ArrowRight size={17} />
                 </Button>
               </Link>
-              <Button size="lg" variant="secondary">
-                <span className="w-8 h-8 rounded-full bg-brand-50 border border-brand-200 flex items-center justify-center shrink-0">
-                  <Play size={13} className="text-brand-700 fill-brand-700 ml-0.5" />
-                </span>
-                Watch Demo
-              </Button>
+              <a
+                href="https://www.youtube.com/@bigbrosai"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button size="lg" variant="secondary">
+                  <span className="w-8 h-8 rounded-full bg-brand-50 border border-brand-200 flex items-center justify-center shrink-0">
+                    <Play size={13} className="text-brand-700 fill-brand-700 ml-0.5" />
+                  </span>
+                  Watch Demo
+                </Button>
+              </a>
             </div>
 
             {/* Trust bullets */}
