@@ -333,11 +333,11 @@ export const TESTIMONIALS: Testimonial[] = [
 
 // ── SOCIAL MEDIA ──────────────────────────────────────────
 export const SOCIAL_MEDIA = [
-  { Icon: MessageCircle, label: "WhatsApp", href: "https://wa.me/1234567890" },
+  { Icon: MessageCircle, label: "WhatsApp", href: "https://wa.me/8279305027" },
   { Icon: Twitter, label: "Twitter", href: "https://x.com/bigbrosai" },
   { Icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/company/bigbrosai/" },
   { Icon: Youtube, label: "YouTube", href: "https://youtube.com/@bigbrosai" },
-  { Icon: Instagram, label: "Instagram", href: "https://instagram.com/bigbros.ai/" },
+  { Icon: Instagram, label: "Instagram", href: "https://instagram.com/bigbrosai_official/" },
 ]
 
 
