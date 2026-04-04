@@ -34,6 +34,26 @@ export function EmailFreeSection() {
           {/* Decorative blobs */}
           <div className="absolute top-0 right-0 w-80 h-80 bg-blue-400/5 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-400/5 rounded-full blur-3xl pointer-events-none" />
+          {/* Email illustration art */}
+          <svg aria-hidden="true" className="absolute right-0 top-0 h-full w-72 pointer-events-none opacity-[0.18]"
+            viewBox="0 0 288 320" fill="none" preserveAspectRatio="xMaxYMid slice">
+            {/* Envelope stack */}
+            <rect x="60" y="80" width="168" height="120" rx="12" fill="#1d4ed8" />
+            <path d="M60 80 L144 148 L228 80" stroke="white" strokeWidth="3" fill="none" />
+            <rect x="72" y="220" width="144" height="100" rx="10" fill="#1d4ed8" opacity="0.6" />
+            <path d="M72 220 L144 270 L216 220" stroke="white" strokeWidth="2" fill="none" opacity="0.8" />
+            {/* Speed lines */}
+            <line x1="20" y1="120" x2="55" y2="120" stroke="#1d4ed8" strokeWidth="2" strokeLinecap="round" />
+            <line x1="10" y1="140" x2="55" y2="140" stroke="#1d4ed8" strokeWidth="2" strokeLinecap="round" />
+            <line x1="25" y1="160" x2="55" y2="160" stroke="#1d4ed8" strokeWidth="2" strokeLinecap="round" />
+            {/* Checkmark badge */}
+            <circle cx="220" cy="75" r="22" fill="#22c55e" />
+            <path d="M210 75 L218 83 L232 67" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+            {/* Dots */}
+            <circle cx="240" cy="200" r="5" fill="#1d4ed8" opacity="0.4" />
+            <circle cx="260" cy="160" r="4" fill="#6366f1" opacity="0.4" />
+            <circle cx="50" cy="260" r="5" fill="#1d4ed8" opacity="0.3" />
+          </svg>
 
           <div className="relative flex flex-col lg:flex-row lg:items-center gap-12">
 

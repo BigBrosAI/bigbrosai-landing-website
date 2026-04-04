@@ -304,10 +304,10 @@ export function UseCasesSection() {
       <div className="py-16 px-6 text-center border-b border-gray-100">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-display font-black text-3xl md:text-4xl lg:text-[2.6rem] text-gray-900 tracking-tight leading-[1.1] mb-3">
-            Everything your business needs on WhatsApp
+            Everything your business needs — on every channel
           </h2>
           <p className="text-slate-500 text-base">
-            From broadcasts to payments — bigbrosai ships new WhatsApp features at blazing fast speed ⚡
+            From WhatsApp broadcasts to email campaigns and AI chatbots — bigbrosai ships new features at blazing fast speed ⚡
           </p>
         </div>
       </div>

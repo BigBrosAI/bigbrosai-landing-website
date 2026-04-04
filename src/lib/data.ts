@@ -91,7 +91,7 @@ export const HERO_STATS: Stat[] = [
 export const PLATFORM_STATS: Stat[] = [
   { value: "50,000", label: "Businesses Trust Us" },
   { value: "2B+", label: "Messages Delivered" },
-  { value: "98%", label: "WhatsApp Open Rate" },
+  { value: "5+", label: "Channels Supported" },
   { value: "60+", label: "Countries Served" },
   { value: "99.9%", label: "Uptime SLA" },
 ];
@@ -190,11 +190,11 @@ export const FEATURES_DATA = [
   {
     id: "whatsapp",
     image: "/features/1.png",
-    title: "WhatsApp Broadcasting",
-    desc: "Send approved template messages to your entire contact list at once. Schedule campaigns, segment audiences, and track every delivery, read and click in real time.",
+    title: "Omnichannel Broadcasting",
+    desc: "Send approved messages to your entire contact list across WhatsApp, Email, SMS and more — all from one dashboard. Schedule campaigns, segment audiences, and track every delivery, read and click in real time.",
     color: "#25d366",
     bullets: [
-      "Bulk broadcast to unlimited contacts",
+      "Broadcast across WhatsApp, Email & SMS",
       "Real-time delivery & read tracking",
       "CTA buttons and quick replies",
       "Schedule campaigns 2 months ahead",
@@ -265,13 +265,13 @@ export const FEATURES_DATA = [
   {
     id: "api",
     image: "/features/6.png",
-    title: "Official WhatsApp API",
-    desc: "bigbrosai is built on official Meta-approved WhatsApp Business APIs. Your account is safe, compliant, and eligible for the coveted Green Tick verification.",
+    title: "Official Multi-Channel APIs",
+    desc: "bigbrosai is built on official Meta-approved WhatsApp Business APIs, verified email relay infrastructure, and carrier-grade SMS gateways. Your account is safe, compliant, and production-ready from day one.",
     color: "#0ea5e9",
     bullets: [
-      "Official Meta BSP partner",
+      "Official Meta BSP partner (WhatsApp)",
       "Free Green Tick verification",
-      "No per-message markup fees",
+      "300 free emails/day — no expiry",
       "99.9% delivery uptime SLA",
       "Developer REST API & webhooks",
       "Official SDKs (Node.js, Python)",
@@ -287,7 +287,7 @@ export const TESTIMONIALS: Testimonial[] = [
     company: "TechRetail India",
     avatar: "P",
     rating: 5,
-    text: "bigbrosai helped us achieve 40% better engagement than email. Our WhatsApp campaigns now drive 35% of total monthly revenue. The ROI is undeniable.",
+    text: "bigbrosai helped us achieve 40% better engagement. Our WhatsApp campaigns drive 35% of monthly revenue, and the email automation handles the rest. The ROI across channels is undeniable.",
   },
   {
     name: "Rahul Mehta",
@@ -295,7 +295,7 @@ export const TESTIMONIALS: Testimonial[] = [
     company: "GrowthHack Agency",
     avatar: "R",
     rating: 5,
-    text: "The chatbot builder is incredible — we automated 80% of lead qualification and cut response time from hours to seconds. Our clients are seeing 3x conversion rates.",
+    text: "The chatbot builder is incredible — we automated 80% of lead qualification across WhatsApp and Instagram. Response time dropped from hours to seconds. Our clients see 3x conversion rates.",
   },
   {
     name: "Sneha Patel",
@@ -303,7 +303,7 @@ export const TESTIMONIALS: Testimonial[] = [
     company: "HealthFirst Clinics",
     avatar: "S",
     rating: 5,
-    text: "Patient appointment reminders through WhatsApp reduced no-shows by 60%. Setup took less than a day. The ROI was visible within the first week.",
+    text: "WhatsApp appointment reminders reduced no-shows by 60%, and transactional emails keep patients informed post-visit. Setup took less than a day. ROI was visible within the first week.",
   },
   {
     name: "Arjun Nair",
@@ -311,7 +311,7 @@ export const TESTIMONIALS: Testimonial[] = [
     company: "FashionForward",
     avatar: "A",
     rating: 5,
-    text: "Abandoned cart recovery via WhatsApp recovers 25% of lost sales. It's the single best marketing investment we made this year. Highly recommended.",
+    text: "Abandoned cart recovery via WhatsApp recovers 25% of lost sales. The free email tier handles our transactional flow. It's the single best marketing investment we made this year.",
   },
   {
     name: "Meera Singh",
@@ -319,7 +319,7 @@ export const TESTIMONIALS: Testimonial[] = [
     company: "EduPlatform",
     avatar: "M",
     rating: 5,
-    text: "We broadcast course updates to 200K students. Open rates consistently above 92%. No other channel comes even close to these numbers for us.",
+    text: "We broadcast course updates to 200K students across WhatsApp and email. WhatsApp open rates consistently above 92%. No other platform gives us this kind of reach from one dashboard.",
   },
   {
     name: "Vikram Tiwari",
@@ -327,7 +327,7 @@ export const TESTIMONIALS: Testimonial[] = [
     company: "FinServe Solutions",
     avatar: "V",
     rating: 5,
-    text: "The analytics dashboard gives us complete visibility. A/B testing messages and seeing real-time conversion differences has transformed how we run campaigns.",
+    text: "The analytics dashboard gives complete visibility across all channels. A/B testing messages and seeing real-time conversion differences has transformed how we run omnichannel campaigns.",
   },
 ];
 

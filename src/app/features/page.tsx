@@ -5,9 +5,9 @@ import { CTASection } from "@/components/sections/CTASection";
 import { FEATURES_DATA } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Features — WhatsApp Marketing, Chatbot & Automation Tools",
+  title: "Features — WhatsApp, Email, SMS & Omnichannel Automation Tools",
   description:
-    "Explore BigBros AI features: WhatsApp broadcasting, AI chatbot builder, multi-agent inbox, campaign analytics, automation flows and official Meta API.",
+    "Explore BigBros AI features: WhatsApp & Email broadcasting, AI chatbot builder, multi-agent inbox, campaign analytics, automation flows and official APIs for every channel.",
   alternates: { canonical: "https://www.bigbrosai.com/features" },
 };
 

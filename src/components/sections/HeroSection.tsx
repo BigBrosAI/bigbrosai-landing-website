@@ -42,6 +42,83 @@ export function HeroSection() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[400px] pointer-events-none"
         style={{ background: "radial-gradient(ellipse at top center, rgba(21,128,61,0.06) 0%, transparent 70%)" }} />
 
+      {/* Omnichannel illustration — floating channel nodes */}
+      <svg aria-hidden="true" className="absolute right-0 top-0 h-full w-[520px] pointer-events-none opacity-[0.55]"
+        viewBox="0 0 520 480" fill="none" preserveAspectRatio="xMaxYMid slice">
+        <defs>
+          <radialGradient id="heroGlow" cx="60%" cy="40%" r="60%">
+            <stop offset="0%" stopColor="#f0fdf4" stopOpacity="0.9" />
+            <stop offset="100%" stopColor="white" stopOpacity="0" />
+          </radialGradient>
+        </defs>
+        <rect width="520" height="480" fill="url(#heroGlow)" />
+        {/* Grid dots */}
+        {Array.from({ length: 10 }).map((_, r) =>
+          Array.from({ length: 13 }).map((_, c) => (
+            <circle key={`${r}-${c}`} cx={c * 42 + 8} cy={r * 48 + 8} r="1.6" fill="#d1fae5" />
+          ))
+        )}
+        {/* Connection lines */}
+        <line x1="260" y1="200" x2="120" y2="100" stroke="#86efac" strokeWidth="2" />
+        <line x1="260" y1="200" x2="400" y2="110" stroke="#93c5fd" strokeWidth="2" />
+        <line x1="260" y1="200" x2="160" y2="330" stroke="#fcd34d" strokeWidth="2" />
+        <line x1="260" y1="200" x2="390" y2="320" stroke="#fca5a5" strokeWidth="2" />
+        <line x1="260" y1="200" x2="260" y2="370" stroke="#c4b5fd" strokeWidth="1.5" />
+        <line x1="120" y1="100" x2="400" y2="110" stroke="#86efac" strokeWidth="1" strokeDasharray="4 3" opacity="0.4" />
+        <line x1="160" y1="330" x2="390" y2="320" stroke="#fcd34d" strokeWidth="1" strokeDasharray="4 3" opacity="0.4" />
+        {/* Center hub — BigBros AI */}
+        <circle cx="260" cy="200" r="44" fill="#f0fdf4" />
+        <circle cx="260" cy="200" r="34" fill="#15803d" />
+        <text x="260" y="196" textAnchor="middle" fill="white" fontSize="9" fontWeight="800" fontFamily="sans-serif">BigBros</text>
+        <text x="260" y="208" textAnchor="middle" fill="white" fontSize="9" fontWeight="800" fontFamily="sans-serif">AI</text>
+        {/* Signal rings */}
+        <circle cx="260" cy="200" r="52" stroke="#15803d" strokeWidth="1" fill="none" strokeDasharray="5 4" opacity="0.3" />
+        <circle cx="260" cy="200" r="62" stroke="#15803d" strokeWidth="0.8" fill="none" strokeDasharray="4 5" opacity="0.15" />
+        {/* WhatsApp node */}
+        <circle cx="120" cy="100" r="30" fill="#dcfce7" />
+        <circle cx="120" cy="100" r="22" fill="#15803d" />
+        <rect x="109" y="91" width="22" height="16" rx="4" fill="white" />
+        <path d="M109 107 L112 114 L109 114 Z" fill="white" />
+        <rect x="112" y="95" width="12" height="2" rx="1" fill="#15803d" />
+        <rect x="112" y="99" width="8" height="2" rx="1" fill="#15803d" />
+        <text x="120" y="142" textAnchor="middle" fill="#15803d" fontSize="9" fontWeight="700" fontFamily="sans-serif">WhatsApp</text>
+        {/* Email node */}
+        <circle cx="400" cy="110" r="28" fill="#dbeafe" />
+        <circle cx="400" cy="110" r="20" fill="#1d4ed8" />
+        <rect x="389" y="102" width="22" height="16" rx="2" fill="white" />
+        <path d="M389 102 L400 112 L411 102" stroke="#1d4ed8" strokeWidth="1.5" fill="none" />
+        <text x="400" y="150" textAnchor="middle" fill="#1d4ed8" fontSize="9" fontWeight="700" fontFamily="sans-serif">Email</text>
+        {/* SMS node */}
+        <circle cx="160" cy="330" r="26" fill="#fef3c7" />
+        <circle cx="160" cy="330" r="18" fill="#d97706" />
+        <rect x="150" y="322" width="20" height="14" rx="4" fill="white" />
+        <path d="M150 336 L153 343 L150 343 Z" fill="white" />
+        <rect x="153" y="326" width="10" height="2" rx="1" fill="#d97706" />
+        <rect x="153" y="330" width="7" height="2" rx="1" fill="#d97706" />
+        <text x="160" y="368" textAnchor="middle" fill="#d97706" fontSize="9" fontWeight="700" fontFamily="sans-serif">SMS</text>
+        {/* Instagram node */}
+        <circle cx="390" cy="320" r="26" fill="#fce7f3" />
+        <circle cx="390" cy="320" r="18" fill="#be185d" />
+        <rect x="381" y="311" width="18" height="18" rx="5" stroke="white" strokeWidth="1.5" fill="none" />
+        <circle cx="390" cy="320" r="4.5" stroke="white" strokeWidth="1.5" fill="none" />
+        <circle cx="396" cy="314" r="1.5" fill="white" />
+        <text x="390" y="358" textAnchor="middle" fill="#be185d" fontSize="9" fontWeight="700" fontFamily="sans-serif">Instagram</text>
+        {/* RCS node */}
+        <circle cx="260" cy="370" r="24" fill="#ede9fe" />
+        <circle cx="260" cy="370" r="16" fill="#7c3aed" />
+        <rect x="251" y="362" width="18" height="14" rx="4" fill="white" />
+        <path d="M251 376 L254 382 L251 382 Z" fill="white" />
+        <rect x="254" y="366" width="9" height="2" rx="1" fill="#7c3aed" />
+        <rect x="254" y="370" width="6" height="2" rx="1" fill="#7c3aed" />
+        <text x="260" y="406" textAnchor="middle" fill="#7c3aed" fontSize="9" fontWeight="700" fontFamily="sans-serif">RCS</text>
+        {/* Sparkles */}
+        <circle cx="70" cy="200" r="3.5" fill="#fcd34d" opacity="0.8" />
+        <circle cx="460" cy="220" r="3" fill="#93c5fd" opacity="0.8" />
+        <circle cx="310" cy="60" r="3" fill="#86efac" opacity="0.7" />
+        <circle cx="200" cy="420" r="3.5" fill="#fca5a5" opacity="0.7" />
+        <circle cx="480" cy="380" r="2.5" fill="#c4b5fd" opacity="0.7" />
+      </svg>
+
       <div className="max-w-7xl mx-auto relative">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-16 items-center">
 

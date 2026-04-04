@@ -4,8 +4,11 @@ import { PLATFORM_STATS } from "@/lib/data";
 
 const ITEMS = [
   "Official WhatsApp Business API",
+  "300 Free Emails Per Day",
   "Free Green Tick Verification",
-  "Free Onboarding Session",
+  "SMS & RCS Messaging",
+  "Instagram DM Automation",
+  "AI Chatbot Builder",
   "Zero Setup Fees",
   "99.9% Uptime SLA",
   "Real-Time Campaign Analytics",

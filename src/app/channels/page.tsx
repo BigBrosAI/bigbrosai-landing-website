@@ -147,40 +147,59 @@ export default function ChannelsPage() {
       />
       {/* Hero */}
       <section className="relative overflow-hidden bg-white pt-14 pb-20 px-6">
-        <div className="max-w-4xl mx-auto text-center relative">
-          <h1 className="text-4xl font-bold mb-6">
-            Meet Customers Wherever They Are
-          </h1>
+        {/* Background grid */}
+        <div className="absolute inset-0 pointer-events-none"
+          style={{ backgroundImage: "linear-gradient(rgba(21,128,61,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(21,128,61,0.03) 1px,transparent 1px)", backgroundSize: "48px 48px" }} />
 
-          <p className="text-gray-600 mb-8">
-            From WhatsApp to Instagram DMs — bigbrosai unifies every channel
-            in one dashboard.
-          </p>
+        <div className="max-w-5xl mx-auto relative">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-brand-50 border border-brand-200 text-brand-700 text-[11px] font-bold uppercase tracking-[0.12em] px-3.5 py-1.5 rounded-full mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand-700" /> 5 Channels · 1 Platform
+            </div>
+            <h1 className="font-display font-black text-4xl md:text-5xl text-gray-900 tracking-tight leading-[1.08] mb-5">
+              Meet Customers{" "}
+              <span className="relative inline-block">
+                <span className="text-gradient">Wherever They Are</span>
+                <svg className="absolute -bottom-1.5 left-0 w-full" height="5" viewBox="0 0 200 5" preserveAspectRatio="none">
+                  <path d="M0 4 Q50 0 100 3 Q150 6 200 2" stroke="#15803d" strokeWidth="2.5" strokeLinecap="round" fill="none" opacity="0.5" />
+                </svg>
+              </span>
+            </h1>
+            <p className="text-slate-500 text-lg max-w-2xl mx-auto leading-relaxed mb-10">
+              From WhatsApp to Instagram DMs — bigbrosai unifies every channel in one dashboard so you never miss a customer conversation.
+            </p>
 
-          <div className="flex flex-wrap justify-center gap-3">
-            {CHANNELS.map((ch) => (
-              <a
-                key={ch.name}
-                href={`#${ch.name.toLowerCase().replace(" ", "")}`}
-                className="flex items-center gap-2 px-4 py-2 rounded-xl border text-sm font-semibold"
-                style={{
-                  borderColor: ch.color + "40",
-                  background: ch.color + "0c",
-                  color: ch.color,
-                }}
-              >
-                {CHANNEL_ICONS[ch.name]}
-                {ch.name}
-                <span
-                  className="text-[9px] font-black uppercase px-1.5 py-0.5 rounded-full"
-                  style={{
-                    background: ch.status === "LIVE" ? ch.color + "20" : "#f1f5f9",
-                    color: ch.status === "LIVE" ? ch.color : "#94a3b8",
-                  }}
+            <div className="flex flex-wrap justify-center gap-3">
+              {CHANNELS.map((ch) => (
+                <a
+                  key={ch.name}
+                  href={`#${ch.name.toLowerCase().replace(" ", "")}`}
+                  className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl border text-sm font-semibold transition-all hover:shadow-md"
+                  style={{ borderColor: ch.color + "40", background: ch.color + "0c", color: ch.color }}
                 >
-                  {ch.status}
-                </span>
-              </a>
+                  {CHANNEL_ICONS[ch.name]}
+                  {ch.name}
+                  <span className="text-[9px] font-black uppercase px-1.5 py-0.5 rounded-full"
+                    style={{ background: ch.status === "LIVE" ? ch.color + "20" : "#f1f5f9", color: ch.status === "LIVE" ? ch.color : "#94a3b8" }}>
+                    {ch.status}
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Channel stats bar */}
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+            {CHANNELS.map((ch) => (
+              <div key={ch.name} className="bg-white border border-gray-100 rounded-2xl p-4 text-center shadow-sm">
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center mx-auto mb-3"
+                  style={{ background: ch.color + "15", color: ch.color }}>
+                  {CHANNEL_ICONS[ch.name]}
+                </div>
+                <p className="font-display font-black text-lg text-gray-900 leading-none">{ch.openRate}</p>
+                <p className="text-[10px] text-slate-500 mt-1">open rate</p>
+                <p className="text-[10px] font-semibold mt-1" style={{ color: ch.color }}>{ch.reach}</p>
+              </div>
             ))}
           </div>
         </div>
@@ -188,7 +207,7 @@ export default function ChannelsPage() {
 
       {/* Channel Cards */}
       <section className="bg-gray-50 py-16 px-6">
-        <div className="max-w-6xl mx-auto space-y-8">
+        <div className="max-w-6xl mx-auto space-y-6">
           {CHANNELS.map((ch) => {
             const stats = CHANNEL_STATS[ch.name] ?? [];
             const isLive = ch.status === "LIVE";
@@ -197,53 +216,59 @@ export default function ChannelsPage() {
               <div
                 key={ch.name}
                 id={ch.name.toLowerCase().replace(" ", "")}
-                className="bg-white rounded-3xl border border-gray-200 p-8"
+                className="bg-white rounded-3xl border border-gray-200 overflow-hidden"
               >
-                <div className="flex items-center gap-4 mb-4">
-                  <div
-                    className="w-14 h-14 flex items-center justify-center rounded-xl"
-                    style={{ background: ch.color + "15", color: ch.color }}
-                  >
-                    {CHANNEL_ICONS[ch.name]}
+                {/* Top accent */}
+                <div className="h-1" style={{ background: `linear-gradient(90deg, ${ch.color}, ${ch.color}60)` }} />
+
+                <div className="p-8 md:p-10">
+                  <div className="flex flex-col md:flex-row md:items-start gap-6 mb-6">
+                    <div className="flex items-center gap-4 flex-1">
+                      <div className="w-14 h-14 flex items-center justify-center rounded-2xl shrink-0"
+                        style={{ background: ch.color + "15", color: ch.color }}>
+                        {CHANNEL_ICONS[ch.name]}
+                      </div>
+                      <div>
+                        <div className="flex items-center gap-2 mb-1">
+                          <h2 className="text-2xl font-display font-black text-gray-900">{ch.name}</h2>
+                          <span className="text-[10px] font-black uppercase px-2 py-0.5 rounded-full"
+                            style={{ background: isLive ? ch.color + "15" : "#f1f5f9", color: isLive ? ch.color : "#94a3b8", border: `1px solid ${isLive ? ch.color + "30" : "#e5e7eb"}` }}>
+                            {ch.status}
+                          </span>
+                        </div>
+                        <p className="text-slate-500 text-sm">{ch.reach} · {ch.openRate} open rate</p>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-wrap gap-3">
+                      {stats.map((s) => (
+                        <div key={s.label} className="flex items-center gap-2 px-3 py-2 border border-gray-100 rounded-xl bg-gray-50">
+                          <span style={{ color: ch.color }}>{s.icon}</span>
+                          <span className="text-sm font-bold text-gray-900">{s.value}</span>
+                          <span className="text-xs text-gray-500">{s.label}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
 
-                  <h2 className="text-2xl font-bold">{ch.name}</h2>
+                  <p className="text-slate-600 text-base leading-relaxed mb-6 max-w-3xl">{ch.desc}</p>
+
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2.5 mb-6">
+                    {ch.features.map((f) => (
+                      <div key={f} className="flex items-center gap-2.5 text-sm text-slate-700 bg-gray-50 rounded-xl px-3 py-2.5">
+                        <span style={{ color: ch.color }}>{FEATURE_ICONS[f] ?? <Check size={14} />}</span>
+                        {f}
+                      </div>
+                    ))}
+                  </div>
+
+                  <a href={isLive ? "/pricing" : "/contact-us"}
+                    className="inline-flex items-center gap-2 text-sm font-semibold px-5 py-2.5 rounded-xl text-white transition-all hover:opacity-90"
+                    style={{ background: ch.color }}>
+                    {isLive ? `Get started with ${ch.name}` : `Get notified when ${ch.name} launches`}
+                    <ArrowRight size={15} />
+                  </a>
                 </div>
-
-                <p className="text-gray-600 mb-6">{ch.desc}</p>
-
-                <div className="flex flex-wrap gap-3 mb-6">
-                  {stats.map((s) => (
-                    <div
-                      key={s.label}
-                      className="flex items-center gap-2 px-3 py-2 border rounded-lg"
-                    >
-                      {s.icon}
-                      <span className="text-sm font-semibold">{s.value}</span>
-                      <span className="text-xs text-gray-500">{s.label}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="grid sm:grid-cols-2 gap-3 mb-6">
-                  {ch.features.map((f) => (
-                    <div key={f} className="flex items-center gap-2 text-sm">
-                      {FEATURE_ICONS[f] ?? <Check size={14} />}
-                      {f}
-                    </div>
-                  ))}
-                </div>
-
-                <a
-                  href={isLive ? "/pricing" : "/contact-us"}
-                  className="inline-flex items-center gap-2 text-sm font-semibold"
-                  style={{ color: ch.color }}
-                >
-                  {isLive
-                    ? `Get started with ${ch.name}`
-                    : `Get notified when ${ch.name} launches`}
-                  <ArrowRight size={15} />
-                </a>
               </div>
             );
           })}

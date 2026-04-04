@@ -9,12 +9,28 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.bigbrosai.com"),
 
   title: {
-    default: "BigBros AI — WhatsApp & AI Automation for Businesses",
+    default: "BigBros AI — Omnichannel Marketing & Automation Platform",
     template: "%s | BigBros AI",
   },
 
   description:
-    "Automate your business with AI-powered WhatsApp, Email, SMS & chatbot solutions. Boost engagement, generate leads, and scale faster with BigBros AI.",
+    "BigBros AI is the all-in-one platform to automate customer communication across WhatsApp, Email, SMS, RCS & Instagram. Send broadcasts, build AI chatbots, and grow your business — powered by official APIs.",
+
+  keywords: [
+    "WhatsApp marketing platform",
+    "email marketing automation",
+    "SMS marketing",
+    "RCS messaging",
+    "Instagram DM automation",
+    "omnichannel marketing",
+    "AI chatbot builder",
+    "WhatsApp Business API",
+    "customer engagement platform",
+    "marketing automation India",
+    "bulk WhatsApp sender",
+    "transactional email service",
+    "BigBros AI",
+  ],
 
   alternates: {
     canonical: "https://www.bigbrosai.com",
@@ -26,9 +42,9 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "BigBros AI — AI Automation Platform",
+    title: "BigBros AI — Omnichannel Marketing & Automation Platform",
     description:
-      "Automate customer engagement using WhatsApp, chatbots, and AI tools.",
+      "Automate customer engagement across WhatsApp, Email, SMS, RCS & Instagram. Build AI chatbots, send broadcasts, and scale faster with BigBros AI.",
     url: "https://www.bigbrosai.com",
     siteName: "BigBros AI",
     images: [
@@ -36,7 +52,7 @@ export const metadata: Metadata = {
         url: "/BBAI_logo.png",
         width: 1200,
         height: 630,
-        alt: "BigBros AI Platform",
+        alt: "BigBros AI — Omnichannel Marketing Platform",
       },
     ],
     locale: "en_US",
@@ -45,9 +61,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "BigBros AI — AI Automation Platform",
+    title: "BigBros AI — Omnichannel Marketing & Automation Platform",
     description:
-      "Scale your business with AI-powered automation and WhatsApp marketing.",
+      "Scale your business with AI-powered automation across WhatsApp, Email, SMS, RCS & Instagram.",
     images: ["/BBAI_logo.png"],
   },
 
@@ -67,6 +83,7 @@ const jsonLd = {
       name: "BigBros AI",
       url: "https://www.bigbrosai.com",
       logo: "https://www.bigbrosai.com/logo.png",
+      description: "BigBros AI is an omnichannel marketing automation platform for WhatsApp, Email, SMS, RCS and Instagram.",
       sameAs: [
         "https://x.com/bigbrosai",
         "https://linkedin.com/company/bigbrosai/",
@@ -101,6 +118,17 @@ const jsonLd = {
       applicationCategory: "BusinessApplication",
       operatingSystem: "Web",
       url: "https://dashboard.bigbrosai.com",
+      description: "Omnichannel marketing automation platform — WhatsApp, Email, SMS, RCS & Instagram from one dashboard.",
+      featureList: [
+        "WhatsApp Business API broadcasting",
+        "Email marketing & transactional emails",
+        "SMS marketing automation",
+        "RCS rich messaging",
+        "Instagram DM automation",
+        "AI chatbot builder",
+        "Multi-agent live chat inbox",
+        "Campaign analytics & reporting",
+      ],
       offers: {
         "@type": "Offer",
         price: "0",
@@ -112,7 +140,6 @@ const jsonLd = {
       "@type": "ItemList",
       name: "BigBros AI Key Pages",
       itemListElement: [
-        { "@type": "SiteLinksSearchBox", target: "https://dashboard.bigbrosai.com/signin" },
         {
           "@type": "ListItem",
           position: 1,
@@ -122,7 +149,7 @@ const jsonLd = {
         {
           "@type": "ListItem",
           position: 2,
-          name: "Sign Up",
+          name: "Sign Up Free",
           url: "https://dashboard.bigbrosai.com/signup",
         },
         {
@@ -134,6 +161,12 @@ const jsonLd = {
         {
           "@type": "ListItem",
           position: 4,
+          name: "Features",
+          url: "https://www.bigbrosai.com/features",
+        },
+        {
+          "@type": "ListItem",
+          position: 5,
           name: "Contact Us",
           url: "https://www.bigbrosai.com/contact-us",
         },
