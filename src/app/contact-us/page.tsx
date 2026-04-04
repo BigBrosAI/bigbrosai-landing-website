@@ -94,12 +94,12 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: "Give Us a Call",
-      details: ["Sales: +1 (555) 123-4567", "Mon-Fri: 10 AM - 7 PM"],
+      details: ["Sales: +91 8279305027", "Mon-Fri: 10 AM - 7 PM"],
     },
     {
       icon: Mail,
       title: "Email Us",
-      details: ["hello@bigbrosai.com", "support@bigbrosai.com"],
+      details: ["support@bigbrosai.com"],
     },
   ];
 
@@ -239,7 +239,7 @@ export default function ContactPage() {
                         ? "border-red-500 focus:border-red-500 focus:ring-red-500/20"
                         : "border-gray-300 focus:border-brand-700 focus:ring-brand-700/20"
                     }`}
-                    placeholder="+1 (555) 123-4567"
+                    placeholder="+91 8279305027"
                   />
                   {errors.phone && (
                     <p className="text-xs text-red-500 mt-1.5 flex items-center gap-1">
@@ -413,7 +413,7 @@ export default function ContactPage() {
             })}
             {/* Calendly Appointment Section */}
             <a
-              href="https://calendly.com/d/33t-6fj-rsq"
+              href="https://calendly.com/founderbbai/30min"
               target="_blank"
               rel="noopener noreferrer"
               className="block p-6 bg-gradient-to-br from-brand-50 to-brand-50/50 rounded-xl border border-brand-200 hover:border-brand-300 hover:shadow-md transition-all duration-300 group"
