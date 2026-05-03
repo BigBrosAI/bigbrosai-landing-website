@@ -18,6 +18,8 @@ export interface NavItem {
 }
 
 // ── Pricing ───────────────────────────────────────────────
+// Legacy flat interface — kept for backward compat with any existing consumers.
+// New code should import PlanDefinition from @/lib/plans instead.
 export interface PricingPlan {
   name: string;
   price: { monthly: number; annual: number };

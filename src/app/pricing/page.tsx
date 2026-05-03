@@ -3,7 +3,6 @@ import { useState } from "react";
 import {
   Check,
   ArrowRight,
-  Zap,
   Building2,
   HelpCircle,
   MessageCircle,
@@ -16,6 +15,7 @@ import {
 import { Button } from "@/components/ui/Button";
 import { CTASection } from "@/components/sections/CTASection";
 import { PRICING_PLANS } from "@/lib/data";
+import { FeatureComparisonTable } from "@/components/pricing/FeatureComparisonTable";
 
 const FAQ = [
   { q: "Is there a free plan?", a: "Yes! Every new account gets a ₹50 signup bonus to get started." },
@@ -173,6 +173,20 @@ export default function PricingPage() {
             <Button size="lg" variant="primary" className="shrink-0">
               Contact Sales <ArrowRight size={16} />
             </Button>
+          </div>
+
+          <div className="mb-16">
+            <div className="text-center mb-10">
+              <h2 className="font-display font-black text-3xl md:text-4xl text-gray-900 tracking-tight mb-3">
+                Compare All Plans
+              </h2>
+              <p className="text-slate-500 text-base">
+                Every feature, every limit — side by side.
+              </p>
+            </div>
+            <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-card mt-2">
+              <FeatureComparisonTable annual={annual} />
+            </div>
           </div>
 
           <div className="mb-16">

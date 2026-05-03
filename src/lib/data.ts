@@ -1,5 +1,5 @@
 import type { PricingPlan, Testimonial, Channel, Stat } from "@/types";
-import { link } from "fs";
+import { ALL_PLANS } from "@/lib/plans";
 import {
   Twitter,
   Linkedin,
@@ -342,75 +342,78 @@ export const SOCIAL_MEDIA = [
 
 
 // ── PRICING ───────────────────────────────────────────────
-export const PRICING_PLANS: PricingPlan[] = [
-  {
-    name: "Starter",
-    price: { monthly: 0, annual: 0 },
-    desc: "Perfect for small businesses starting with WhatsApp marketing.",
-    color: "#64748b",
-    cta: "Start for Free",
-    features: [
-      "Free WhatsApp Business API",
-      "₹50 Free signup Bonus.",
-      "Unlimited Free Service Conversations",
-      "300 free emails / day (forever)",
-      "Upload & Manage Contacts",
-      "Create tags & attributes",
-      "Live Chat Dashboard",
-      "Email support",
-      "Create template messages",
-    ],
-  },
-  {
-    name: "Basic",
-    price: { monthly: 799, annual: 720 },
-    desc: "For scaling teams who need automation and advanced analytics.",
-    color: "#22c55e",
-    cta: "Get Started",
-    // popular: true,
-    features: [
-      "All Features of Free",
-      "Marketing: ₹0.99",
-      "Utility: ₹0.145",
-      "Authentication: ₹0.145",
-      "Service: Unlimited Free Service Conversations",
-      "Create 2 Campaigns only",
-      "Create Contacts only",
-      "1 Owner + 5 FREE Agents included.",
-      "Click-to-WhatsApp Ads",
-      "Smart Audience Segregation",
-      "Broadcasting & Retargeting",
-      "Template Message APIs",
-      "2400 Messages/min",
-      "Shared Team Inbox",
-      "Upto 1 GB Cloud Storage",
-    ],
-  },
-  {
-    name: "Pro",
-    price: { monthly: 1499, annual: 1350 },
-    desc: "For high-volume businesses with advanced compliance needs.",
-    color: "#8b5cf6",
-    cta: "Get Started",
-    features: [
-      "All Features of Basic",
-      "Marketing: ₹0.99",
-      "Utility: ₹0.145",
-      "Authentication: ₹0.145",
-      "Service: Unlimited Free Service Conversations",
-      "Unlimited Campaign",
-      "Campaign Budget Analytics",
-      "Allow Import Contacts",
-      "5000 Messages/min",
-      "CSV Campaign Scheduler",
-      "User Access Control",
-      "AI template builder",
-      "Dedicated account manager",
-      "99.9% SLA guarantee",
-      "Upto 5 GB Cloud Storage",
-    ],
-  },
-];
+// Derived from the single source of truth in @/lib/plans.
+// Only FREE / BASIC / PRO are shown as cards; ENTERPRISE has its own block.
+export const PRICING_PLANS: PricingPlan[] = ALL_PLANS
+  .filter((p) => p.code !== "ENTERPRISE")
+  .map((p) => ({
+    name: p.name,
+    price: { monthly: p.pricing.monthly, annual: p.pricing.annual },
+    desc: p.description,
+    color: p.color,
+    popular: p.popular,
+    cta: p.cta,
+    // Legacy flat feature list — used only by the old plan cards.
+    // The new FeatureComparisonTable reads directly from PlanDefinition.
+    features: buildLegacyFeatureList(p.code),
+  }));
+
+function buildLegacyFeatureList(code: string): string[] {
+  switch (code) {
+    case "FREE":
+      return [
+        "Free WhatsApp Business API",
+        "₹50 Free signup Bonus.",
+        "Unlimited Free Service Conversations",
+        "300 free emails / day (forever)",
+        "Upload & Manage Contacts",
+        "Create tags & attributes",
+        "Live Chat Dashboard",
+        "Email support",
+        "Create template messages",
+      ];
+    case "BASIC":
+      return [
+        "All Features of Free",
+        "Marketing: ₹0.99 / conversation",
+        "Utility: ₹0.145 / conversation",
+        "Authentication: ₹0.145 / conversation",
+        "Create up to 2 Campaigns",
+        "1 Owner + 4 FREE Agents included",
+        "Extra agents at ₹99 / user / month",
+        "Click-to-WhatsApp Ads",
+        "Smart Audience Segregation",
+        "Broadcasting & Retargeting",
+        "Template Message APIs",
+        "2,400 Messages / min",
+        "Shared Team Inbox",
+        "Up to 1 GB Cloud Storage",
+      ];
+    case "PRO":
+      return [
+        "All Features of Basic",
+        "Marketing: ₹0.99 / conversation",
+        "Utility: ₹0.145 / conversation",
+        "Authentication: ₹0.145 / conversation",
+        "Unlimited Campaigns",
+        "Campaign Budget Analytics",
+        "Import Contacts via CSV",
+        "5,000 Messages / min",
+        "CSV Campaign Scheduler",
+        "User Access Control",
+        "AI Template Builder",
+        "Flow Builder — 2 free slots / month",
+        "Extra flow slots at ₹250 / slot",
+        "1 Owner + 4 FREE Agents included",
+        "Extra agents at ₹99 / user / month",
+        "Dedicated Account Manager",
+        "99.9% SLA Guarantee",
+        "Up to 5 GB Cloud Storage",
+      ];
+    default:
+      return [];
+  }
+}
 
 // ── INDUSTRIES ────────────────────────────────────────────
 export const INDUSTRIES = [
