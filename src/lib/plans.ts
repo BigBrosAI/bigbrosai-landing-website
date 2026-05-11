@@ -296,7 +296,7 @@ export const PLAN_DEFINITIONS: Record<PlanCode, PlanDefinition> = {
     cta: 'Get Started',
 
     pricing: {
-      monthly: 799,
+      monthly: 999,
       annual: 720,             // ₹720/mo billed annually (≈10% off)
       annualDiscountPct: 10,
       currency: 'INR',
@@ -377,8 +377,8 @@ export const PLAN_DEFINITIONS: Record<PlanCode, PlanDefinition> = {
     cta: 'Get Started',
 
     pricing: {
-      monthly: 1499,
-      annual: 1350,            // ₹1,350/mo billed annually (≈10% off)
+      monthly: 2100,
+      annual: 1890,            // ₹1,890/mo billed annually (≈10% off)
       annualDiscountPct: 10,
       currency: 'INR',
       isCustom: false,
