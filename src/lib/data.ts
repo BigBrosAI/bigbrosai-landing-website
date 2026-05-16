@@ -375,7 +375,7 @@ function buildLegacyFeatureList(code: string): string[] {
     case "BASIC":
       return [
         "All Features of Free",
-        "Marketing: ₹0.99 / conversation",
+        "Marketing: ₹0.9999 / conversation",
         "Utility: ₹0.145 / conversation",
         "Authentication: ₹0.145 / conversation",
         "Create up to 2 Campaigns",
@@ -392,7 +392,7 @@ function buildLegacyFeatureList(code: string): string[] {
     case "PRO":
       return [
         "All Features of Basic",
-        "Marketing: ₹0.99 / conversation",
+        "Marketing: ₹0.9999 / conversation",
         "Utility: ₹0.145 / conversation",
         "Authentication: ₹0.145 / conversation",
         "Unlimited Campaigns",

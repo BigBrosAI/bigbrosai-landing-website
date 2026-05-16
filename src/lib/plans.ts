@@ -304,7 +304,7 @@ export const PLAN_DEFINITIONS: Record<PlanCode, PlanDefinition> = {
     },
 
     rates: {
-      waMarketing: 0.99,
+      waMarketing: 0.9999,
       waUtility: 0.145,
       waAuthentication: 0.145,
       waService: null,         // free
@@ -385,7 +385,7 @@ export const PLAN_DEFINITIONS: Record<PlanCode, PlanDefinition> = {
     },
 
     rates: {
-      waMarketing: 0.99,
+      waMarketing: 0.9999,
       waUtility: 0.145,
       waAuthentication: 0.145,
       waService: null,         // free
