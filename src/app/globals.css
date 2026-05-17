@@ -38,3 +38,9 @@ body {
 
 .animate-float    { animation: float 5s ease-in-out infinite; }
 .animate-ping-slow{ animation: ping-slow 2s ease-out infinite; }
+
+@keyframes power-flow { from { stroke-dashoffset: 143; } to { stroke-dashoffset: 0; } }
+.animate-power { animation: power-flow 3s linear infinite; }
+@keyframes float-soft { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+@keyframes ring-soft  { 0% { transform: translate(-50%,-50%) scale(0.55); opacity: 0.4; } 100% { transform: translate(-50%,-50%) scale(1.45); opacity: 0; } }
+@keyframes breathe    { 0%,100% { transform: scale(1); } 50% { transform: scale(1.035); } }

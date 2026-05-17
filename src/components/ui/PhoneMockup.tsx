@@ -11,9 +11,9 @@ import {
   MoreVertical,
 } from "lucide-react";
 
-type ButtonType = "QUICK_REPLY" | "URL" | "PHONE_NUMBER" | "COPY_CODE";
-interface TemplateButton { type: ButtonType; text: string; }
-interface MsgTemplate {
+export type ButtonType = "QUICK_REPLY" | "URL" | "PHONE_NUMBER" | "COPY_CODE";
+export interface TemplateButton { type: ButtonType; text: string; }
+export interface MsgTemplate {
   label: string;
   tag: string;
   headerType?: "none" | "text" | "image" | "video" | "document" | "location";
@@ -167,10 +167,17 @@ function DblCheck() {
   );
 }
 
-export function PhoneMockup({ businessName = "bigbrosai" }: { businessName?: string }) {
+export function PhoneMockup({
+  businessName = "bigbrosai",
+  templates,
+}: {
+  businessName?: string;
+  templates?: MsgTemplate[];
+}) {
+  const list = templates && templates.length ? templates : TEMPLATES;
   const [current, setCurrent] = useState(0);
   const [visible, setVisible] = useState(true);
-  const template = TEMPLATES[current];
+  const template = list[current];
 
   useEffect(() => {
     const iv = setInterval(() => advance(1), 3500);
@@ -180,7 +187,7 @@ export function PhoneMockup({ businessName = "bigbrosai" }: { businessName?: str
   function advance(dir: 1 | -1) {
     setVisible(false);
     setTimeout(() => {
-      setCurrent((c) => (c + dir + TEMPLATES.length) % TEMPLATES.length);
+      setCurrent((c) => (c + dir + list.length) % list.length);
       setVisible(true);
     }, 260);
   }
@@ -367,7 +374,7 @@ export function PhoneMockup({ businessName = "bigbrosai" }: { businessName?: str
           <ChevronLeft size={16} />
         </button>
         <div className="flex gap-1.5 items-center">
-          {TEMPLATES.map((_, i) => (
+          {list.map((_, i) => (
             <button
               key={i}
               onClick={() => jumpTo(i)}
@@ -395,7 +402,7 @@ export function PhoneMockup({ businessName = "bigbrosai" }: { businessName?: str
       >
         {TAG_ICONS[template.tag]}
         {template.label}
-        <span className="opacity-40 text-[10px]">· {current + 1}/{TEMPLATES.length}</span>
+        <span className="opacity-40 text-[10px]">· {current + 1}/{list.length}</span>
       </div>
 
     </div>

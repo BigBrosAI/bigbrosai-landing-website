@@ -1,14 +1,19 @@
 "use client";
-import { MessageCircle } from "lucide-react";
 
 export function FloatingWA() {
   return (
-    <a href="https://wa.me/918279305027" target="_blank" rel="noopener noreferrer"
+    <a
+      href="https://wa.me/918279305027"
+      target="_blank"
+      rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
-      className="fixed bottom-7 right-7 z-50 w-12 h-12 rounded-full flex items-center justify-center"
-      style={{ background: "#15803d", boxShadow: "0 4px 24px #15803d" }}>
-      <span className="absolute inset-0 rounded-full bg-[#15803d] animate-ping-slow" />
-      <MessageCircle size={20} className="text-white relative z-10" style={{ fill: "white" }} />
+      className="fixed bottom-6 right-6 sm:bottom-7 sm:right-7 z-50 w-14 h-14 rounded-full flex items-center justify-center"
+      style={{ background: "#25D366", boxShadow: "0 6px 24px rgba(37,211,102,0.55)" }}
+    >
+      <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping-slow" />
+      <svg viewBox="0 0 32 32" className="w-7 h-7 relative z-10" fill="white" aria-hidden="true">
+        <path d="M16.003 3C9.38 3 4 8.38 4 15.003c0 2.64.86 5.09 2.32 7.08L4 29l7.09-2.28a11.93 11.93 0 0 0 4.91 1.05h.01C22.62 27.77 28 22.39 28 15.77 28 9.15 22.62 3.77 16.003 3zm0 21.6c-1.49 0-2.95-.4-4.22-1.16l-.3-.18-4.2 1.35 1.12-4.1-.27-.42a9.6 9.6 0 0 1-1.47-5.09c0-5.32 4.33-9.65 9.66-9.65 2.58 0 5 1.01 6.82 2.83a9.57 9.57 0 0 1 2.83 6.82c0 5.32-4.34 9.66-9.7 9.66zm5.3-7.23c-.29-.15-1.72-.85-1.98-.95-.27-.1-.46-.15-.65.15-.19.29-.74.94-.91 1.13-.17.19-.34.22-.63.07-.29-.15-1.22-.45-2.33-1.44-.86-.77-1.44-1.72-1.61-2.01-.17-.29-.02-.45.13-.6.13-.13.29-.34.43-.51.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.65-1.57-.89-2.15-.23-.56-.47-.48-.65-.49l-.55-.01c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.4 0 1.43 1.03 2.81 1.17 3 .14.19 2.02 3.08 4.9 4.32.68.29 1.22.47 1.64.6.69.22 1.31.19 1.81.12.55-.08 1.72-.7 1.96-1.38.24-.68.24-1.26.17-1.38-.07-.12-.26-.19-.55-.34z" />
+      </svg>
     </a>
   );
 }
