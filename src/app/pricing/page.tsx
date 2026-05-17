@@ -69,11 +69,16 @@ export default function PricingPage() {
 
       {/* Email Free Tier Banner */}
       <section className="bg-white border-b border-gray-100 py-4 px-6">
-        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-3 text-center sm:text-left">
-          <div className="flex items-center gap-2 bg-blue-50 border border-blue-200 rounded-full px-4 py-2">
+        <div className="max-w-xl mx-auto flex flex-col items-stretch gap-3">
+          <div className="flex flex-wrap items-center justify-center gap-2 bg-blue-50 border border-blue-200 rounded-2xl px-5 py-3">
             <span className="text-blue-600 text-sm font-bold">📧 Email:</span>
             <span className="text-blue-700 text-sm font-semibold">300 free emails / day on every plan</span>
-            <span className="text-blue-500 text-xs">· ₹0.125/email after</span>
+            <span className="bg-blue-600 text-white text-xs font-bold px-2.5 py-1 rounded-full">₹0.125 / email after</span>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-2 bg-amber-50 border border-amber-200 rounded-2xl px-5 py-3">
+            <span className="text-amber-600 text-sm font-bold">📱 SMS:</span>
+            <span className="text-amber-700 text-sm font-semibold">OTP, alerts &amp; promotions on every plan</span>
+            <span className="bg-amber-500 text-white text-xs font-bold px-2.5 py-1 rounded-full">₹0.14–0.20 / SMS · volume based</span>
           </div>
         </div>
       </section>

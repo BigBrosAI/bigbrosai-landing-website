@@ -6,7 +6,7 @@ import {
   Archive, Reply, Forward, Trash2, MoreHorizontal
 } from "lucide-react";
 
-type TemplateItem = {
+export type TemplateItem = {
   subject: string;
   sender: string;
   date: string;
@@ -113,7 +113,8 @@ const EMAIL_TEMPLATES: TemplateItem[] = [
   }
 ];
 
-export function EmailMockup() {
+export function EmailMockup({ templates }: { templates?: TemplateItem[] } = {}) {
+  const list = templates && templates.length ? templates : EMAIL_TEMPLATES;
   const [current, setCurrent] = useState(0);
   const [visible, setVisible] = useState(true);
 
@@ -125,7 +126,7 @@ export function EmailMockup() {
   function advance(dir: 1 | -1) {
     setVisible(false);
     setTimeout(() => {
-      setCurrent((c) => (c + dir + EMAIL_TEMPLATES.length) % EMAIL_TEMPLATES.length);
+      setCurrent((c) => (c + dir + list.length) % list.length);
       setVisible(true);
     }, 300);
   }
@@ -136,7 +137,7 @@ export function EmailMockup() {
     setTimeout(() => { setCurrent(i); setVisible(true); }, 300);
   }
 
-  const template = EMAIL_TEMPLATES[current];
+  const template = list[current];
 
   return (
     <div className="flex flex-col items-center gap-5 select-none w-full max-w-2xl">
@@ -219,7 +220,7 @@ export function EmailMockup() {
 
       {/* Progress indicators for mobile or underneath */}
       <div className="flex gap-1.5 items-center mt-2">
-        {EMAIL_TEMPLATES.map((_, i) => (
+        {list.map((_, i) => (
           <button
             key={i}
             onClick={() => jumpTo(i)}
