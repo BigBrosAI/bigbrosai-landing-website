@@ -3,10 +3,44 @@ import path from "path";
 import { MetadataRoute } from "next";
 
 const baseUrl = process.env.SITE_URL || "https://www.bigbrosai.com";
+const dashboardUrl =
+  process.env.DASHBOARD_URL || "https://dashboard.bigbrosai.com";
 const baseDir = "src/app";
 
 const excludeFolders = ["api", "fonts", "_components", "_lib"];
 const excludeRoutes = ["/thank-you", "/admin"];
+const explicitRoutes = ["/brochure"];
+const dashboardRoutes = ["/signin", "/signup"];
+
+function getRoutePriority(route: string): number {
+  if (route === "") return 1.0;
+  if (["/pricing", "/features", "/product", "/channels", "/brochure"].includes(route)) {
+    return 0.9;
+  }
+  if (route.startsWith("/industries")) return 0.8;
+  if (route.startsWith("/legal")) return 0.3;
+  return 0.6;
+}
+
+function getRouteChangeFrequency(
+  route: string,
+): MetadataRoute.Sitemap[number]["changeFrequency"] {
+  if (route === "" || ["/pricing", "/features", "/brochure"].includes(route)) {
+    return "weekly";
+  }
+  if (route.startsWith("/legal")) return "yearly";
+  return "monthly";
+}
+
+function getRouteLastModified(route: string, appPath: string): Date {
+  const pagePath = path.join(appPath, route, "page.tsx");
+
+  try {
+    return fs.statSync(pagePath).mtime;
+  } catch {
+    return new Date();
+  }
+}
 
 function getAllRoutes(dir: string, parentPath = ""): string[] {
   const entries = fs.readdirSync(dir, { withFileTypes: true });
@@ -38,20 +72,21 @@ function getAllRoutes(dir: string, parentPath = ""): string[] {
 export default function sitemap(): MetadataRoute.Sitemap {
   const appPath = path.join(process.cwd(), baseDir);
 
-  const routes = getAllRoutes(appPath);
-  routes.unshift("");
+  const routes = Array.from(new Set(["", ...getAllRoutes(appPath), ...explicitRoutes]));
 
-  return routes.map((route) => ({
+  const websiteEntries = routes.map((route) => ({
     url: `${baseUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: "weekly",
-    priority:
-      route === ""
-        ? 1.0
-        : route.includes("services")
-        ? 0.9
-        : route.includes("blog")
-        ? 0.8
-        : 0.6,
+    lastModified: getRouteLastModified(route, appPath),
+    changeFrequency: getRouteChangeFrequency(route),
+    priority: getRoutePriority(route),
   }));
+
+  const dashboardEntries = dashboardRoutes.map((route) => ({
+    url: `${dashboardUrl}${route}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: route === "/signup" ? 0.8 : 0.7,
+  }));
+
+  return [...websiteEntries, ...dashboardEntries];
 }
