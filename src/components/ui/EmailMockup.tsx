@@ -24,7 +24,7 @@ const EMAIL_TEMPLATES: TemplateItem[] = [
     preview: "482917 is your verification code for bigbrosai...",
     body: (
       <div className="bg-slate-50 p-6 rounded-xl font-sans text-sm text-slate-700">
-        <div className="max-w-md mx-auto bg-white rounded-lg overflow-hidden shadow-sm border border-slate-100 p-8 text-center">
+        <div className="max-w-md mx-auto bg-white rounded-lg overflow-hidden border border-slate-100 p-8 text-center">
           <h1 className="text-xl font-bold text-slate-900 mb-2">Verification Code</h1>
           <p className="mb-6 text-slate-500">Please use the verification code below to sign in.</p>
 
@@ -47,7 +47,7 @@ const EMAIL_TEMPLATES: TemplateItem[] = [
     date: "Yesterday, 2:15 PM",
     preview: "Thank you for your payment of ₹8299.00...",
     body: (
-      <div className="font-sans text-sm text-slate-700 bg-white p-6 rounded-lg border border-gray-200 shadow-sm max-w-md mx-auto">
+      <div className="font-sans text-sm text-slate-700 bg-white p-6 rounded-lg border border-gray-200 max-w-md mx-auto">
         <div className="flex justify-between items-start mb-8 border-b border-gray-100 pb-4">
           <div>
             <h1 className="text-lg font-bold text-slate-900">Receipt</h1>
@@ -151,7 +151,7 @@ export function EmailMockup({ templates }: { templates?: TemplateItem[] } = {}) 
             <div className="w-3 h-3 rounded-full bg-amber-400"></div>
             <div className="w-3 h-3 rounded-full bg-green-400"></div>
           </div>
-          <div className="mx-auto flex items-center bg-white px-3 py-1 rounded shadow-sm border border-slate-200 text-xs text-slate-500 gap-2 w-1/2 justify-center">
+          <div className="mx-auto flex items-center bg-white px-3 py-1 rounded border border-slate-200 text-xs text-slate-500 gap-2 w-1/2 justify-center">
             <LockIcon /> mail.google.com
           </div>
         </div>

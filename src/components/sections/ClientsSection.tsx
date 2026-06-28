@@ -30,7 +30,7 @@ export function ClientsSection() {
           {TRACK.map(({ name, src }, i) => (
             <div
               key={i}
-              className="flex items-center justify-center w-44 h-20 rounded-2xl border border-gray-200 bg-white px-5 py-4 shadow-sm shrink-0"
+              className="flex items-center justify-center w-44 h-20 rounded-2xl border border-gray-200 bg-white px-5 py-4 shrink-0"
             >
               <Image
                 src={src}

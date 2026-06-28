@@ -22,7 +22,7 @@ const PRICING_URL = "https://www.bigbrosai.com/pricing";
 function mailBody(accent: string, heading: string, lines: string[], cta: string) {
   return (
     <div className="font-sans text-sm text-slate-700">
-      <div className="max-w-md mx-auto bg-white rounded-xl border border-slate-100 shadow-sm overflow-hidden">
+      <div className="max-w-md mx-auto bg-white rounded-xl border border-slate-100 overflow-hidden">
         <div className="h-2" style={{ background: accent }} />
         <div className="p-6 sm:p-7">
           <h1 className="text-lg sm:text-xl font-bold text-slate-900 mb-3">{heading}</h1>
@@ -41,7 +41,7 @@ function mailBody(accent: string, heading: string, lines: string[], cta: string)
 function otpBody(accent: string, brand: string) {
   return (
     <div className="font-sans text-sm text-slate-700">
-      <div className="max-w-md mx-auto bg-white rounded-xl border border-slate-100 shadow-sm overflow-hidden text-center">
+      <div className="max-w-md mx-auto bg-white rounded-xl border border-slate-100 overflow-hidden text-center">
         <div className="h-2" style={{ background: accent }} />
         <div className="p-7">
           <h1 className="text-lg font-bold text-slate-900 mb-2">Your {brand} verification code</h1>

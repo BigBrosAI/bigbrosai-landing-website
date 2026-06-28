@@ -48,7 +48,7 @@ function DragDropMockup() {
         <div className="flex-1 p-3 overflow-hidden bg-white">
           <div className="border-2 border-dashed border-blue-200 rounded-xl p-2 space-y-1.5">
             {blocks.map(b=>(
-              <div key={b.label} className="flex items-center gap-2 px-2 py-1.5 rounded-lg border cursor-pointer hover:shadow-sm transition-shadow" style={{background:b.color,borderColor:b.border}}>
+              <div key={b.label} className="flex items-center gap-2 px-2 py-1.5 rounded-lg border cursor-pointer transition-shadow" style={{background:b.color,borderColor:b.border}}>
                 <span className="text-[10px] w-4 text-center shrink-0">{b.icon}</span>
                 <span className="text-[9px] text-gray-700 font-medium">{b.label}</span>
                 <div className="ml-auto flex gap-1">

@@ -347,7 +347,7 @@ export function FeatureComparisonTable({ annual }: FeatureComparisonTableProps) 
                 >
                   {isPro && (
                     <div className="flex justify-center mb-2">
-                      <span className="bg-violet-600 text-white text-[9px] font-black uppercase tracking-widest px-3 py-1 rounded-full whitespace-nowrap shadow-sm">
+                      <span className="bg-violet-600 text-white text-[9px] font-black uppercase tracking-widest px-3 py-1 rounded-full whitespace-nowrap">
                         Most Popular
                       </span>
                     </div>

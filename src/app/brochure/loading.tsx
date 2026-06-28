@@ -2,7 +2,7 @@ export default function BrochureLoading() {
   return (
     <div className="w-full h-screen flex flex-col bg-gray-50">
       {/* Header skeleton */}
-      <div className="bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between shadow-sm">
+      <div className="bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between">
         <div className="h-8 w-24 bg-gray-200 rounded animate-pulse" />
         <div className="h-6 w-40 bg-gray-200 rounded animate-pulse hidden sm:block" />
         <div className="h-9 w-28 bg-gray-200 rounded-lg animate-pulse" />

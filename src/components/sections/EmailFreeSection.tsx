@@ -101,7 +101,7 @@ export function EmailFreeSection() {
             {/* Right: stats grid */}
             <div className="grid grid-cols-2 gap-3 lg:w-72 shrink-0">
               {PERKS.map(p => (
-                <div key={p.stat} className="bg-white rounded-2xl border border-gray-200 px-5 py-5 shadow-sm">
+                <div key={p.stat} className="bg-white rounded-2xl border border-gray-200 px-5 py-5">
                   <p className="font-display font-black text-2xl text-gray-900 leading-none">{p.stat}</p>
                   <p className="text-xs font-semibold text-gray-600 mt-1.5 leading-snug">{p.label}</p>
                   <p className="text-[10px] text-gray-400 mt-0.5">{p.sub}</p>

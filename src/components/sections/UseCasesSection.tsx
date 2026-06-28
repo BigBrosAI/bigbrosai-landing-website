@@ -62,7 +62,7 @@ function ChatbotMockup() {
           <div><p className="text-white text-[10px] font-semibold">bigbrosai ✓</p><p className="text-white/60 text-[8px]">typically replies instantly</p></div>
         </div>
         <div className="bg-[#E5DDD5] px-2 py-3 space-y-2 min-h-[180px]">
-          <div className="bg-white rounded-lg rounded-tl-none px-2.5 py-2 max-w-[90%] shadow-sm">
+          <div className="bg-white rounded-lg rounded-tl-none px-2.5 py-2 max-w-[90%]">
             <p className="text-[10px] text-gray-800">Hi! 👋 How can I help you today?</p>
           </div>
           <div className="flex gap-1 flex-wrap">
@@ -70,10 +70,10 @@ function ChatbotMockup() {
               <div key={b} className="bg-white border border-brand-200 rounded-full px-2 py-0.5 text-[8px] text-brand-700 font-semibold">{b}</div>
             ))}
           </div>
-          <div className="bg-[#dcf8c6] rounded-lg rounded-tr-none px-2.5 py-2 max-w-[90%] ml-auto shadow-sm">
+          <div className="bg-[#dcf8c6] rounded-lg rounded-tr-none px-2.5 py-2 max-w-[90%] ml-auto">
             <p className="text-[10px] text-gray-800">Buy a Plan</p>
           </div>
-          <div className="bg-white rounded-lg rounded-tl-none px-2.5 py-2 max-w-[90%] shadow-sm">
+          <div className="bg-white rounded-lg rounded-tl-none px-2.5 py-2 max-w-[90%]">
             <p className="text-[10px] text-gray-800 mb-1.5">Great! Here are our plans 🎉</p>
             {["Starter — Free", "Basic — ₹799/mo", "Pro — ₹1499/mo"].map(p => (
               <div key={p} className="flex items-center gap-1.5 py-0.5"><span className="w-1.5 h-1.5 rounded-full bg-brand-600 shrink-0" /><span className="text-[9px] text-gray-700">{p}</span></div>
@@ -132,8 +132,8 @@ function CTWAMockup() {
           <div><p className="text-white text-[10px] font-semibold">Hind University ✓</p><p className="text-white/60 text-[8px]">Business Account</p></div>
         </div>
         <div className="bg-[#E5DDD5] px-2 py-3 space-y-2">
-          <div className="bg-white rounded-lg rounded-tl-none px-2.5 py-2 max-w-[90%] shadow-sm"><p className="text-[10px] text-gray-800">Enroll me for MBA Program!</p></div>
-          <div className="bg-white rounded-lg rounded-tl-none px-2.5 py-2 max-w-[90%] shadow-sm">
+          <div className="bg-white rounded-lg rounded-tl-none px-2.5 py-2 max-w-[90%]"><p className="text-[10px] text-gray-800">Enroll me for MBA Program!</p></div>
+          <div className="bg-white rounded-lg rounded-tl-none px-2.5 py-2 max-w-[90%]">
             <p className="text-[10px] text-gray-800 mb-1.5">Hi Diksha 👋<br />Fill this form to proceed</p>
             <div className="bg-brand-600 rounded-md py-1 text-center text-[9px] font-bold text-white">Fill Details</div>
           </div>

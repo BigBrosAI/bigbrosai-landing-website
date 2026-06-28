@@ -191,7 +191,7 @@ export default function ChannelsPage() {
           {/* Channel stats bar */}
           <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
             {CHANNELS.map((ch) => (
-              <div key={ch.name} className="bg-white border border-gray-100 rounded-2xl p-4 text-center shadow-sm">
+              <div key={ch.name} className="bg-white border border-gray-100 rounded-2xl p-4 text-center">
                 <div className="w-10 h-10 rounded-xl flex items-center justify-center mx-auto mb-3"
                   style={{ background: ch.color + "15", color: ch.color }}>
                   {CHANNEL_ICONS[ch.name]}

@@ -63,7 +63,7 @@ export function HeroSectionEmail() {
             <div className="flex flex-wrap gap-2 mb-9">
               {HIGHLIGHTS.map(({ Icon, label, color }) => (
                 <div key={label}
-                  className="flex items-center gap-2 px-3.5 py-2 rounded-xl border text-sm font-medium bg-white shadow-sm"
+                  className="flex items-center gap-2 px-3.5 py-2 rounded-xl border text-sm font-medium bg-white"
                   style={{ borderColor: color + "30", color: "#334155" }}>
                   <Icon size={15} style={{ color }} />
                   {label}
