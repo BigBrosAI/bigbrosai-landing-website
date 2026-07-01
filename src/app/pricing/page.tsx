@@ -25,6 +25,15 @@ const FAQ = [
   { q: "Do you offer a refund guarantee?", a: "Refunds may be issued after a review of the request." },
 ];
 
+const WHATSAPP_COUNTRY_PRICING = [
+  { market: "India", code: "+91", marketing: "₹0.9926", utility: "₹0.1323", authentication: "₹0.1323" },
+  { market: "North America", code: "Region", marketing: "₹2.1060", utility: "₹0.2865", authentication: "₹0.2865" },
+  { market: "United Arab Emirates", code: "+971", marketing: "₹4.2105", utility: "₹1.3235", authentication: "₹1.3235" },
+  { market: "United Kingdom", code: "+44", marketing: "₹5.3470", utility: "₹1.8540", authentication: "₹1.8540" },
+  { market: "Indonesia", code: "+62", marketing: "₹3.4628", utility: "₹2.1063", authentication: "₹2.1063" },
+  { market: "Other markets", code: "Default", marketing: "₹5.0885", utility: "₹0.6487", authentication: "₹0.6487" },
+];
+
 export default function PricingPage() {
   const [annual, setAnnual] = useState(false);
 
@@ -79,6 +88,56 @@ export default function PricingPage() {
             <span className="text-amber-600 text-sm font-bold">📱 SMS:</span>
             <span className="text-amber-700 text-sm font-semibold">OTP, alerts &amp; promotions on every plan</span>
             <span className="bg-amber-500 text-white text-xs font-bold px-2.5 py-1 rounded-full">₹0.14–0.20 / SMS · volume based</span>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white px-6 py-14 border-b border-gray-100">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+            <div className="max-w-4xl">
+              <h2 className="font-display font-black text-4xl md:text-5xl text-gray-900 tracking-tight leading-[1.1]">
+                Countrywise per WhatsApp message Pricing
+              </h2>
+              <p className="mt-5 text-slate-500 text-lg leading-relaxed">
+                Messaging costs vary by your user's country. Check the exact per-message charges for sending WhatsApp messages to users in different regions.
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={() => document.getElementById("whatsapp-country-pricing")?.scrollIntoView({ behavior: "smooth", block: "start" })}
+              className="inline-flex items-center justify-center gap-3 rounded-xl bg-brand-700 px-6 py-4 text-base font-bold text-white shadow-brand transition-all hover:bg-brand-800 active:scale-[0.97] lg:shrink-0"
+            >
+              Explore Pricing <ArrowRight size={22} />
+            </button>
+          </div>
+
+          <div id="whatsapp-country-pricing" className="mt-10 overflow-hidden rounded-2xl border border-gray-200 bg-white">
+            <div className="overflow-x-auto">
+              <table className="min-w-[760px] w-full text-left">
+                <thead className="bg-gray-50">
+                  <tr className="border-b border-gray-200">
+                    <th className="px-5 py-4 text-xs font-bold uppercase tracking-[0.08em] text-gray-500">Market</th>
+                    <th className="px-5 py-4 text-xs font-bold uppercase tracking-[0.08em] text-gray-500">Marketing</th>
+                    <th className="px-5 py-4 text-xs font-bold uppercase tracking-[0.08em] text-gray-500">Utility</th>
+                    <th className="px-5 py-4 text-xs font-bold uppercase tracking-[0.08em] text-gray-500">Authentication</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-100">
+                  {WHATSAPP_COUNTRY_PRICING.map((row) => (
+                    <tr key={row.market} className="hover:bg-gray-50/70">
+                      <td className="px-5 py-4">
+                        <div className="font-semibold text-gray-900">{row.market}</div>
+                        <div className="text-xs text-slate-400">{row.code}</div>
+                      </td>
+                      <td className="px-5 py-4 font-mono text-sm font-bold text-gray-900">{row.marketing}</td>
+                      <td className="px-5 py-4 font-mono text-sm font-bold text-gray-900">{row.utility}</td>
+                      <td className="px-5 py-4 font-mono text-sm font-bold text-gray-900">{row.authentication}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </section>
