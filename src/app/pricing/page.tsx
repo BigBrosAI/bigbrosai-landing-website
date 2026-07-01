@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   Check,
   ArrowRight,
@@ -25,17 +25,117 @@ const FAQ = [
   { q: "Do you offer a refund guarantee?", a: "Refunds may be issued after a review of the request." },
 ];
 
-const WHATSAPP_COUNTRY_PRICING = [
-  { market: "India", code: "+91", marketing: "₹0.9926", utility: "₹0.1323", authentication: "₹0.1323" },
-  { market: "North America", code: "Region", marketing: "₹2.1060", utility: "₹0.2865", authentication: "₹0.2865" },
-  { market: "United Arab Emirates", code: "+971", marketing: "₹4.2105", utility: "₹1.3235", authentication: "₹1.3235" },
-  { market: "United Kingdom", code: "+44", marketing: "₹5.3470", utility: "₹1.8540", authentication: "₹1.8540" },
-  { market: "Indonesia", code: "+62", marketing: "₹3.4628", utility: "₹2.1063", authentication: "₹2.1063" },
-  { market: "Other markets", code: "Default", marketing: "₹5.0885", utility: "₹0.6487", authentication: "₹0.6487" },
+type WhatsAppPricingCategory =
+  | "marketing"
+  | "utility"
+  | "authentication"
+  | "authentication_international"
+  | "service";
+
+type WhatsAppPricingRate = {
+  marketKey: string;
+  marketType: "COUNTRY" | "REGION" | "GLOBAL_FALLBACK";
+  metaMarketName: string;
+  countryIso?: string | null;
+  countryCallingCode?: string | null;
+  category: WhatsAppPricingCategory;
+  currency: string;
+  customerDefaultRate: number;
+  effectiveFrom?: string;
+};
+
+const WHATSAPP_CATEGORY_LABELS: Record<WhatsAppPricingCategory, string> = {
+  marketing: "Marketing",
+  utility: "Utility",
+  authentication: "Authentication",
+  authentication_international: "Auth International",
+  service: "Service",
+};
+
+const WHATSAPP_CATEGORY_ORDER: WhatsAppPricingCategory[] = [
+  "marketing",
+  "utility",
+  "authentication",
+  "authentication_international",
+  "service",
 ];
+
+function formatRate(value?: number | null) {
+  if (typeof value !== "number" || Number.isNaN(value)) return "-";
+  return `₹${value.toLocaleString("en-IN", { minimumFractionDigits: 4, maximumFractionDigits: 4 })}`;
+}
+
+function getPricingPayload(payload: unknown): WhatsAppPricingRate[] {
+  if (Array.isArray(payload)) return payload as WhatsAppPricingRate[];
+  const data = (payload as { data?: unknown })?.data;
+  return Array.isArray(data) ? data as WhatsAppPricingRate[] : [];
+}
 
 export default function PricingPage() {
   const [annual, setAnnual] = useState(false);
+  const [whatsAppRates, setWhatsAppRates] = useState<WhatsAppPricingRate[]>([]);
+  const [pricingLoading, setPricingLoading] = useState(true);
+  const [pricingError, setPricingError] = useState<string | null>(null);
+
+  useEffect(() => {
+    let active = true;
+
+    async function loadWhatsAppPricing() {
+      try {
+        setPricingLoading(true);
+        setPricingError(null);
+        const response = await fetch("/api/whatsapp-pricing", {
+          headers: { accept: "application/json" },
+          cache: "no-store",
+        });
+
+        if (!response.ok) {
+          throw new Error(`Pricing API returned ${response.status}`);
+        }
+
+        const payload = await response.json();
+        if (active) setWhatsAppRates(getPricingPayload(payload));
+      } catch (error) {
+        if (active) setPricingError(error instanceof Error ? error.message : "Could not load pricing");
+      } finally {
+        if (active) setPricingLoading(false);
+      }
+    }
+
+    loadWhatsAppPricing();
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  const whatsAppPricingRows = useMemo(() => {
+    const grouped = new Map<string, {
+      sample: WhatsAppPricingRate;
+      rates: Partial<Record<WhatsAppPricingCategory, WhatsAppPricingRate>>;
+    }>();
+
+    whatsAppRates.forEach((rate) => {
+      const key = rate.marketKey || rate.countryIso || rate.metaMarketName;
+      const existing = grouped.get(key) || { sample: rate, rates: {} };
+      existing.rates[rate.category] = rate;
+      grouped.set(key, existing);
+    });
+
+    return Array.from(grouped.values()).sort((a, b) => {
+      const marketOrder = { COUNTRY: 0, REGION: 1, GLOBAL_FALLBACK: 2 } as Record<string, number>;
+      const typeDiff = (marketOrder[a.sample.marketType] ?? 3) - (marketOrder[b.sample.marketType] ?? 3);
+      if (typeDiff !== 0) return typeDiff;
+      if (a.sample.countryIso === "IN") return -1;
+      if (b.sample.countryIso === "IN") return 1;
+      return a.sample.metaMarketName.localeCompare(b.sample.metaMarketName);
+    });
+  }, [whatsAppRates]);
+
+  const visibleCategories = useMemo(() => {
+    return WHATSAPP_CATEGORY_ORDER.filter((category) =>
+      whatsAppRates.some((rate) => rate.category === category)
+    );
+  }, [whatsAppRates]);
 
   return (
     <>
@@ -88,56 +188,6 @@ export default function PricingPage() {
             <span className="text-amber-600 text-sm font-bold">📱 SMS:</span>
             <span className="text-amber-700 text-sm font-semibold">OTP, alerts &amp; promotions on every plan</span>
             <span className="bg-amber-500 text-white text-xs font-bold px-2.5 py-1 rounded-full">₹0.14–0.20 / SMS · volume based</span>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white px-6 py-14 border-b border-gray-100">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
-            <div className="max-w-4xl">
-              <h2 className="font-display font-black text-4xl md:text-5xl text-gray-900 tracking-tight leading-[1.1]">
-                Countrywise per WhatsApp message Pricing
-              </h2>
-              <p className="mt-5 text-slate-500 text-lg leading-relaxed">
-                Messaging costs vary by your user's country. Check the exact per-message charges for sending WhatsApp messages to users in different regions.
-              </p>
-            </div>
-            <button
-              type="button"
-              onClick={() => document.getElementById("whatsapp-country-pricing")?.scrollIntoView({ behavior: "smooth", block: "start" })}
-              className="inline-flex items-center justify-center gap-3 rounded-xl bg-brand-700 px-6 py-4 text-base font-bold text-white shadow-brand transition-all hover:bg-brand-800 active:scale-[0.97] lg:shrink-0"
-            >
-              Explore Pricing <ArrowRight size={22} />
-            </button>
-          </div>
-
-          <div id="whatsapp-country-pricing" className="mt-10 overflow-hidden rounded-2xl border border-gray-200 bg-white">
-            <div className="overflow-x-auto">
-              <table className="min-w-[760px] w-full text-left">
-                <thead className="bg-gray-50">
-                  <tr className="border-b border-gray-200">
-                    <th className="px-5 py-4 text-xs font-bold uppercase tracking-[0.08em] text-gray-500">Market</th>
-                    <th className="px-5 py-4 text-xs font-bold uppercase tracking-[0.08em] text-gray-500">Marketing</th>
-                    <th className="px-5 py-4 text-xs font-bold uppercase tracking-[0.08em] text-gray-500">Utility</th>
-                    <th className="px-5 py-4 text-xs font-bold uppercase tracking-[0.08em] text-gray-500">Authentication</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-100">
-                  {WHATSAPP_COUNTRY_PRICING.map((row) => (
-                    <tr key={row.market} className="hover:bg-gray-50/70">
-                      <td className="px-5 py-4">
-                        <div className="font-semibold text-gray-900">{row.market}</div>
-                        <div className="text-xs text-slate-400">{row.code}</div>
-                      </td>
-                      <td className="px-5 py-4 font-mono text-sm font-bold text-gray-900">{row.marketing}</td>
-                      <td className="px-5 py-4 font-mono text-sm font-bold text-gray-900">{row.utility}</td>
-                      <td className="px-5 py-4 font-mono text-sm font-bold text-gray-900">{row.authentication}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
           </div>
         </div>
       </section>
@@ -252,6 +302,93 @@ export default function PricingPage() {
               <FeatureComparisonTable annual={annual} />
             </div>
           </div>
+
+          <section className="bg-white px-6 py-14 border-b border-gray-100">
+            <div className="max-w-6xl mx-auto">
+              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+                <div className="max-w-4xl">
+                  <h2 className="font-display font-black text-4xl md:text-5xl text-gray-900 tracking-tight leading-[1.1]">
+                    Countrywise per WhatsApp message Pricing
+                  </h2>
+                  <p className="mt-5 text-slate-500 text-lg leading-relaxed">
+                    Messaging costs vary by your user's country. Check the exact per-message charges for sending WhatsApp messages to users in different regions.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => document.getElementById("whatsapp-country-pricing")?.scrollIntoView({ behavior: "smooth", block: "start" })}
+                  className="inline-flex items-center justify-center gap-3 rounded-xl bg-brand-700 px-6 py-4 text-base font-bold text-white shadow-brand transition-all hover:bg-brand-800 active:scale-[0.97] lg:shrink-0"
+                >
+                  Explore Pricing <ArrowRight size={22} />
+                </button>
+              </div>
+
+              <div id="whatsapp-country-pricing" className="mt-10 overflow-hidden rounded-2xl border border-gray-200 bg-white">
+                <div className="overflow-x-auto">
+                  <table className="min-w-[980px] w-full text-left">
+                    <thead className="bg-gray-50">
+                      <tr className="border-b border-gray-200">
+                        <th className="px-5 py-4 text-xs font-bold uppercase tracking-[0.08em] text-gray-500">Market</th>
+                        {(visibleCategories.length ? visibleCategories : WHATSAPP_CATEGORY_ORDER.slice(0, 3)).map((category) => (
+                          <th key={category} className="px-5 py-4 text-xs font-bold uppercase tracking-[0.08em] text-gray-500">
+                            {WHATSAPP_CATEGORY_LABELS[category]}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-gray-100">
+                      {pricingLoading && Array.from({ length: 6 }).map((_, index) => (
+                        <tr key={index}>
+                          <td className="px-5 py-5">
+                            <div className="h-5 w-40 rounded bg-gray-100 animate-pulse" />
+                            <div className="mt-2 h-3 w-16 rounded bg-gray-100 animate-pulse" />
+                          </td>
+                          {(visibleCategories.length ? visibleCategories : WHATSAPP_CATEGORY_ORDER.slice(0, 3)).map((category) => (
+                            <td key={category} className="px-5 py-5">
+                              <div className="h-5 w-20 rounded bg-gray-100 animate-pulse" />
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                      {!pricingLoading && !pricingError && whatsAppPricingRows.map(({ sample, rates }) => (
+                        <tr key={sample.marketKey} className="hover:bg-gray-50/70">
+                          <td className="px-5 py-4">
+                            <div className="font-semibold text-gray-900">{sample.metaMarketName}</div>
+                            <div className="text-xs text-slate-400">
+                              {sample.countryCallingCode
+                                ? `+${sample.countryCallingCode}`
+                                : sample.marketType === "GLOBAL_FALLBACK"
+                                  ? "Default"
+                                  : "Region"}
+                            </div>
+                          </td>
+                          {visibleCategories.map((category) => (
+                            <td key={category} className="px-5 py-4 font-mono text-sm font-bold text-gray-900">
+                              {formatRate(rates[category]?.customerDefaultRate)}
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                      {!pricingLoading && pricingError && (
+                        <tr>
+                          <td className="px-5 py-8 text-sm text-red-600" colSpan={(visibleCategories.length || 3) + 1}>
+                            Pricing is temporarily unavailable.
+                          </td>
+                        </tr>
+                      )}
+                      {!pricingLoading && !pricingError && whatsAppPricingRows.length === 0 && (
+                        <tr>
+                          <td className="px-5 py-8 text-sm text-slate-500" colSpan={(visibleCategories.length || 3) + 1}>
+                            WhatsApp pricing will appear after the active Meta rate card is uploaded.
+                          </td>
+                        </tr>
+                      )}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </section>
 
           <div className="mb-16">
             <div className="text-center mb-12">
